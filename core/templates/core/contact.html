@@ -91,6 +91,8 @@
                             <li class="dropdown submenu nav-item"><a title="Pages" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">More</a>
                                 <ul role="menu" class=" dropdown-menu">
 
+                                    <li class="nav-item"><a title="Team" class="nav-link" href="{% url 'core:team' %}">Team</a></li>
+
                                     <li class="nav-item"><a title="FAQ" class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li>
 
                                     <li class="nav-item"><a title="Contact" class="nav-link" href="{% url 'core:contact' %}">Contact</a></li>
@@ -98,7 +100,7 @@
                             </li>                         
                         </ul>
 
-                        <a class="btn_get btn_hover hidden-sm hidden-xs" href="#get-app">Sign In</a>
+                        <a class="btn_get btn_hover hidden-sm hidden-xs" href="{% url 'core:login' %}">Sign In</a>
                     </div>
                 </div>
             </nav>

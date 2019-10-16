@@ -22,3 +22,9 @@ def faq(request):
 
 def contact(request):
     return render(request, 'core/contact.html', {})
+
+def signup(request):
+    return render(request, 'core/signup.html', {})
+
+def login(request):
+    return render(request, 'core/login.html', {})
