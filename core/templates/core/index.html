@@ -1,0 +1,493 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
+    <title>BrandShack - High performance social media creatives for marketers </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-selector/css/bootstrap-select.min.css' %}">
+    <!--icon font css-->
+    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icon/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/flaticon/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/animation/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/nice-select/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/magnify-pop/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/scroll/jquery.mCustomScrollbar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/elagent/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+</head>
+
+<body>
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <p class="text-center">Loading</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body_wrapper">
+        <header class="header_area">
+            <nav class="navbar navbar-expand-lg menu_one support_menu">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'core:index' %}"><img src="{% static 'assets/img/logo.png' %}" srcset="{% static 'assets/img/logo2x.png' %}" alt="logo"></a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="menu_toggle">
+                            <span class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            <span class="hamburger-cross">
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav pl_100 mr-auto menu">
+                            <li class="nav-item dropdown submenu mega_menu mega_menu_two active">
+                                <a class="nav-link dropdown-toggle" href="{% url 'core:index' %}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'core:how-it-works' %}" role="button" aria-haspopup="true" aria-expanded="false">
+                                    How it works
+                                </a>                            
+                            </li>
+                            <li class="nav-item submenu mega_menu">
+                                <a class="nav-link" href="{% url 'core:samples' %}" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Samples
+                                </a>
+                            </li>
+                            <li class="nav-item submenu mega_menu">
+                                <a class="nav-link" href="{% url 'core:pricing' %}" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Pricing
+                                </a>
+                            </li>
+                            <li class="dropdown submenu nav-item"><a title="Pages" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">More</a>
+                                <ul role="menu" class=" dropdown-menu">
+
+                                    <li class="nav-item"><a title="Team" class="nav-link" href="team.html">Team</a></li>
+
+                                    <li class="nav-item"><a title="FAQ" class="nav-link" href="faq.html">FAQ</a></li>
+
+                                    <li class="nav-item"><a title="Contact 02" class="nav-link" href="contact-2.html">Contact</a></li>
+                                </ul>
+                            </li>                         
+                        </ul>
+
+                        <a class="btn_get btn_hover hidden-sm hidden-xs" href="#get-app">Sign In</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="support_home_area">
+            <div class="banner_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2 class="f_p f_size_40 l_height60 wow fadeInUp" data-wow-delay="0.3s">What would an <span class="f_700">extra 1.5% CTR</span><br>do for your <u>social</u> ad campaign?</h2>
+                            <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">BrandShack is a tool to create and optimize social media ad creatives for marketers.<br> Enter your email below to get invited!</p>
+                            <form class="mailchimp wow fadeInUp" data-wow-delay="0.6s" method="post">
+                                <div class="input-group subcribes">
+                                    <input type="text" name="EMAIL" class="form-control memail" placeholder="saasland@gmail.com">
+                                    <button class="btn btn_submit f_size_15 f_500" type="submit">Start free trial</button>
+                                </div>
+                                <p class="mchimp-errmessage" style="display: none;"></p>
+                                <p class="mchimp-sucmessage" style="display: none;"></p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="support_home_img wow fadeInUp" data-wow-delay="0.9s">
+                        <img src="{% static 'assets/img/new-home/banner.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="support_partner_logo_area">
+            <div class="container">
+                <h4 class="f_size_18 f_400 f_p text-center l_height28 mb_50">Companies that use BrandShack to power their social media ads</h4>
+                <div class="row partner_info">
+                    <div class="logo_item">
+                        <a href="#"><img src="{% static 'assets/img/home3/logo_01.png' %}" alt=""></a>
+                    </div>
+                    <div class="logo_item">
+                        <a href="#"><img src="{% static 'assets/img/home3/logo_02.png' %}" alt=""></a>
+                    </div>
+                    <div class="logo_item">
+                        <a href="#"><img src="{% static 'assets/img/home3/logo_03.png' %}" alt=""></a>
+                    </div>
+                    <div class="logo_item">
+                        <a href="#"><img src="{% static 'assets/img/home3/logo_04.png' %}" alt=""></a>
+                    </div>
+                    <div class="logo_item">
+                        <a href="#"><img src="{% static 'assets/img/home3/logo_05.png' %}" alt=""></a>
+                    </div>
+                </div>
+                <div class="border_bottom"></div>
+            </div>
+        </section>
+        <section class="support_help_area sec_pad">
+            <div class="container">
+                <h2 class="f_p f_size_30 l_height50 f_600 t_color text-center wow fadeInUp mb_60">What would you like to do right now?</h2>
+                <div class="d-flex">
+                    <div class="support_item">
+                        <img src="{% static 'assets/img/new-home/ticket-support.png' %}" alt="">
+                        <h4>Create "CTR-Boost"&trade; Banner</h4>
+                        <a href="#" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
+                    </div>
+                    <div class="support_item">
+                        <img src="{% static 'assets/img/new-home/email.png' %}" alt="">
+                        <h4>Refuel "CTR-Boost"&trade; Banner</h4>
+                        <a href="#" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="design_tab_area sec_pad">
+            <div class="container">
+                <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
+                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Support in your door step</h2>
+                    <p class="f_400 f_size_16 mb-0">Show off show off pick your nose and blow off Elizabeth grub haggle<br> dropped a clanger cracking.!</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 d-flex align-items-center">
+                        <ul class="nav nav-tabs design_tab support_tab" role="tablist">
+                            <li class="nav-item wow fadeInUp" data-wow-delay="0.4s">
+                                <a class="nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="one" aria-selected="true">
+                                    <h5>Facebook Ads</h5>
+                                    <p>Design to development,<br> automated</p>
+                                </a>
+                            </li>
+                            <li class="nav-item wow fadeInUp" data-wow-delay="0.6s">
+                                <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="two" aria-selected="false">
+                                    <h5>Instagram Ads</h5>
+                                    <p>Design to development,<br> automated</p>
+                                </a>
+                            </li>
+                            <li class="nav-item wow fadeInUp" data-wow-delay="0.8s">
+                                <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="three" aria-selected="false">
+                                    <h5>Twitter Ads</h5>
+                                    <p>Design to development,<br> automated</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="tab-content support_tab_content">
+                            <div class="tab-pane fade show active" id="one" role="tabpanel" aria-labelledby="one-tab">
+                                <div class="tab_img">
+                                    <img src="{% static 'assets/img/new-home/tab_2.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="two" role="tabpanel" aria-labelledby="two-tab">
+                                <div class="tab_img">
+                                    <img src="{% static 'assets/img/new-home/tab.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="three" role="tabpanel" aria-labelledby="three-tab">
+                                <div class="tab_img">
+                                    <img src="{% static 'assets/img/new-home/tab_3.png' %}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="support_integration_area">
+            <div class="container">
+                <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
+                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Software Integrations</h2>
+                    <p class="f_400 f_size_16 mb-0">Why I say old chap that is spiffing lavatory chip shop gosh off his nut, smashing boot<br> are you taking the piss posh loo brilliant matie boy.!</p>
+                </div>
+                <div class="row flex-row-reverse">
+                    <div class="col-lg-9 col-md-10 col-sm-12">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <a href="#" class="s_integration_item">
+                                    <img src="{% static 'assets/img/new-home/kissmetrics.png' %}" alt="">
+                                    <h5>Cost-saving</h5>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <a href="#" class="s_integration_item">
+                                    <img src="{% static 'assets/img/new-home/metorik.png' %}" alt="">
+                                    <h5>Cancel anytime</h5>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <a href="#" class="s_integration_item">
+                                    <img src="{% static 'assets/img/new-home/nicereply-1.png' %}" alt="">
+                                    <h5>Flexible Payment</h5>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <a href="#" class="s_integration_item">
+                                    <img src="{% static 'assets/img/new-home/campfire.png' %}" alt="">
+                                    <h5>Free ad-Hub</h5>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <a href="#" class="s_integration_item">
+                                    <img src="{% static 'assets/img/new-home/webhooks.png' %}" alt="">
+                                    <h5>24-Hour Support</h5>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <a href="#" class="s_integration_item">
+                                    <img src="{% static 'assets/img/new-home/briteverify.png' %}" alt="">
+                                    <h5>BriteVerify</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-sm-12">
+                        <img class="integration_img" src="{% static 'assets/img/new-home/tree.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="support_price_area sec_pad">
+            <div class="container custom_container p0">
+                <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
+                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Software Integrations</h2>
+                    <p class="f_400 f_size_16 mb-0">Why I say old chap that is spiffing lavatory chip shop gosh off his nut, smashing boot<br> are you taking the piss posh loo brilliant matie boy.!</p>
+                </div>
+                <div class="price_content price_content_two">
+                    <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="price_item">
+                            <img src="{% static 'assets/img/new-home/p-1.png' %}" alt="">
+                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Mono</h5>
+                            <p>Create and optimize your ad creatives for 1 social media platform (eg: Facebook only)</p>
+                            <div class="price f_700 f_size_40 t_color2">$25.00<sub class="f_size_16 f_400">/ mo</sub></div>
+                            <ul class="list-unstyled p_list">
+                                <li><i class="ti-check"></i>Only 2 Operators</li>
+                                <li><i class="ti-check"></i>Abandoned Cart</li>
+                                <li><i class="ti-check"></i>Facebook & Instagram Ads</li>
+                                <li><i class="ti-close"></i>Order Notifications</li>
+                                <li><i class="ti-close"></i>Landing Pages</li>
+                            </ul>
+                            <a href="#" class="price_btn btn_hover">Start Today</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="price_item">
+                            <div class="tag"><span>Recommended</span></div>
+                            <img src="{% static 'assets/img/new-home/p-2.png' %}" alt="">
+                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Duo</h5>
+                            <p>Create and optimize your ad creatives for 2 social media platforms (eg: Facebook and Instagram)</p>
+                            <div class="price f_700 f_size_40 t_color2">$25.00<sub class="f_size_16 f_400">/ mo</sub></div>
+                            <ul class="list-unstyled p_list">
+                                <li><i class="ti-check"></i>Only 2 Operators</li>
+                                <li><i class="ti-check"></i>Abandoned Cart</li>
+                                <li><i class="ti-check"></i>Facebook & Instagram Ads</li>
+                                <li><i class="ti-close"></i>Order Notifications</li>
+                                <li><i class="ti-close"></i>Landing Pages</li>
+                            </ul>
+                            <a href="#" class="price_btn btn_hover">Start Today</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="price_item">
+                            <img src="{% static 'assets/img/new-home/p-3.png' %}" alt="">
+                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Trio</h5>
+                            <p>Create and optimize your ad creatives for Facebook, Twitter and Instagram)</p>
+                            <div class="price f_700 f_size_40 t_color2">$99.00<sub class="f_size_16 f_400">/ mo</sub></div>
+                            <ul class="list-unstyled p_list">
+                                <li><i class="ti-check"></i>Only 2 Operators</li>
+                                <li><i class="ti-check"></i>Abandoned Cart</li>
+                                <li><i class="ti-check"></i>Facebook & Instagram Ads</li>
+                                <li><i class="ti-close"></i>Order Notifications</li>
+                                <li><i class="ti-close"></i>Landing Pages</li>
+                            </ul>
+                            <a href="#" class="price_btn btn_hover">Start Today</a>
+                        </div>
+                    </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        <!-- <section class="agency_testimonial_area sec_pad">
+            <div class="container">
+                <h2 class="f_size_30 f_600 t_color3 l_height40 text-center mb_60 wow fadeInUp" data-wow-delay="0.1s">We've heard things like</h2>
+                <div class="agency_testimonial_info support_testimonial_info">
+                    <div class="testimonial_slider owl-carousel">
+                        <div class="testimonial_item text-center left">
+                            <div class="author_img"><img src="img/home4/author_img.png" alt=""></div>
+                            <div class="author_description">
+                                <h4 class="f_500 t_color3 f_size_18">Lurch Schpellchek</h4>
+                                <h6>UI/UX designer</h6>
+                            </div>
+                            <p>What a load of rubbish bits and bobs pear shaped owt to do with me bubble and squeak jolly good morish tinkety tonk old fruit, car boot my good sir buggered plastered cheeky David, haggle young delinquent say so I said bite your arm off easy peasy. Skive off it's all gone to pot buggered.</p>
+                        </div>
+                        <div class="testimonial_item text-center center">
+                            <div class="author_img"><img src="img/home4/author_img.png" alt=""></div>
+                            <div class="author_description">
+                                <h4 class="f_500 t_color3 f_size_18">Lurch Schpellchek</h4>
+                                <h6>UI/UX designer</h6>
+                            </div>
+                            <p>What a load of rubbish bits and bobs pear shaped owt to do with me bubble and squeak jolly good morish tinkety tonk old fruit, car boot my good sir buggered plastered cheeky David, haggle young delinquent say so I said bite your arm off easy peasy. Skive off it's all gone to pot buggered.</p>
+                        </div>
+                        <div class="testimonial_item text-center right">
+                            <div class="author_img"><img src="img/home4/author_img.png" alt=""></div>
+                            <div class="author_description">
+                                <h4 class="f_500 t_color3 f_size_18">Lurch Schpellchek</h4>
+                                <h6>UI/UX designer</h6>
+                            </div>
+                            <p>What a load of rubbish bits and bobs pear shaped owt to do with me bubble and squeak jolly good morish tinkety tonk old fruit, car boot my good sir buggered plastered cheeky David, haggle young delinquent say so I said bite your arm off easy peasy. Skive off it's all gone to pot buggered.</p>
+                        </div>
+                        <div class="testimonial_item text-center">
+                            <div class="author_img"><img src="img/home4/author_img.png" alt=""></div>
+                            <div class="author_description">
+                                <h4 class="f_500 t_color3 f_size_18">Lurch Schpellchek</h4>
+                                <h6>UI/UX designer</h6>
+                            </div>
+                            <p>What a load of rubbish bits and bobs pear shaped owt to do with me bubble and squeak jolly good morish tinkety tonk old fruit, car boot my good sir buggered plastered cheeky David, haggle young delinquent say so I said bite your arm off easy peasy. Skive off it's all gone to pot buggered.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="support_subscribe_area sec_pad">
+            <img class="h_leaf one wow fadeInUp" data-wow-delay="0.4s" src="{% static 'assets/img/new-home/tree-left.png' %}" alt="">
+            <img class="h_leaf two wow fadeInUp" data-wow-delay="0.6s" src="{% static 'assets/img/new-home/tree-right.png' %}" alt="">
+            <div class="container">
+                <div class="sec_title text-center mb_50 wow fadeInUp" data-wow-delay="0.3s">
+                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Start your free trial today</h2>
+                    <p class="f_400 f_size_16 mb-0">Instant Sign Up. Cancel Anytime. No Credit Card Required.</p>
+                </div>
+                <form action="#" class="support_subscribe mailchimp" method="post" novalidate="true">
+                    <input type="text" name="EMAIL" class="form-control memail" placeholder="E-Mail Address">
+                    <button class="btn btn-submit" type="submit"><i class="ti-arrow-right"></i></button>
+                    <p class="mchimp-errmessage" style="display: none;"></p>
+                    <p class="mchimp-sucmessage" style="display: none;"></p>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer_area h_footer_dark pos_footer_area">
+            <img class="leaf_left" src="{% static 'assets/img/pos/leaf-left.png' %}" alt="">
+            <img class="leaf_right" src="{% static 'assets/img/pos/leaf-right.png' %}" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="f_widget dark_widget company_widget">
+                            <a href="index.html" class="f-logo"><img src="{% static 'assets/img/logo2.png' %}" alt=""></a>
+                            <p>© 2019 SaasLand, LLC. All rights reserved. Proudly made in NY</p>
+                            <div class="f_social_icon">
+                                <a href="#" class="ti-facebook"></a>
+                                <a href="#" class="ti-twitter-alt"></a>
+                                <a href="#" class="ti-vimeo-alt"></a>
+                                <a href="#" class="ti-pinterest"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget dark_widget about-widget pl_70">
+                            <h3 class="f-title f_500 t_color f_size_18 mb_40">Company</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Partners</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Android app <small>(coming soon)</small></a></li>
+                                <li><a href="#">iOS app <small>(coming soon)</small></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="f_widget dark_widget about-widget pl_20">
+                            <h3 class="f-title f_500 t_color f_size_18 mb_40">Help</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Term & conditions</a></li>
+                                <li><a href="#">Tools Market</a></li>
+                                <li><a href="#">API <small>(coming soon)</small></a></li>
+                                <li><a href="#">Pricing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="f_widget dark_widget about-widget pl_20">
+                            <h3 class="f-title f_500 t_color f_size_18 mb_40">Contact</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">System Status</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pos_footer_bottom justify-content-between d-flex align-items-end">
+                    <img class="pos_women" src="{% static 'assets/img/pos/women.png' %}" alt="">
+                    <img src="{% static 'assets/img/pos/people.png' %}" alt="">
+                    <img class="pos_women" src="{% static 'assets/img/pos/man.png' %}" alt="">
+                </div>
+            </div>
+            <svg class="wave_shap" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" opacity="0.302" fill="rgb(73, 69, 140)" d="M22.990,11.999 C22.990,11.999 -62.334,196.188 102.000,90.998 C236.033,5.204 349.217,18.152 512.000,80.998 C773.380,181.909 898.075,49.752 1051.000,15.998 C1316.369,-42.574 1488.518,78.268 1581.000,112.999 C1783.485,189.036 1942.990,61.999 1942.990,61.999 L1942.990,211.999 L22.990,211.999 L22.990,11.999 Z" />
+            </svg>
+        </footer>
+    </div>
+    <form class="search_boxs" role="search">
+        <div class="search_box_inner">
+            <div class="close_icon">
+                <i class="icon_close"></i>
+            </div>
+            <div class="input-group">
+                <input type="text" name="search" class="form_control search-input" placeholder="Recipient's username" autofocus>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button"><i class="icon_search"></i></button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/propper.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap-selector/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wow/wow.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/sckroller/jquery.parallax-scroll.js' %}"></script>
+    <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/nice-select/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/isotope/isotope-min.js' %}"></script>
+    <script src="{% static 'assets/vendors/magnify-pop/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins.js' %}"></script>
+    <script src="{% static 'assets/vendors/scroll/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/multiscroll/jquery.easings.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/multiscroll/multiscroll.responsiveExpand.limited.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/multiscroll/jquery.multiscroll.extensions.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>
