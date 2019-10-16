@@ -49,6 +49,7 @@
             </div>
         </div>
     </div>
+
     <div class="body_wrapper">
         <header class="header_area">
             <nav class="navbar navbar-expand-lg menu_one menu_four">
@@ -93,11 +94,9 @@
                             <li class="dropdown submenu nav-item"><a title="Pages" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">More</a>
                                 <ul role="menu" class=" dropdown-menu">
 
-                                    <li class="nav-item"><a title="Team" class="nav-link" href="team.html">Team</a></li>
+                                    <li class="nav-item"><a title="FAQ" class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li>
 
-                                    <li class="nav-item"><a title="FAQ" class="nav-link" href="faq.html">FAQ</a></li>
-
-                                    <li class="nav-item"><a title="Contact 02" class="nav-link" href="contact-2.html">Contact</a></li>
+                                    <li class="nav-item"><a title="Contact" class="nav-link" href="{% url 'core:contact' %}">Contact</a></li>
                                 </ul>
                             </li>                         
                         </ul>
@@ -107,6 +106,7 @@
                 </div>
             </nav>
         </header>
+        
         <section class="breadcrumb_area">
             <img class="breadcrumb_shap" src="{% static 'assets/img/breadcrumb/banner_bg.png' %}" alt="">
             <div class="container">

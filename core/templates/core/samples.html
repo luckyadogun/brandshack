@@ -84,18 +84,16 @@
                                 </a>
                             </li>
                             <li class="nav-item submenu mega_menu">
-                                <a class="nav-link" href="price.html" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" href="{% url 'core:pricing' %}" role="button" aria-haspopup="true" aria-expanded="false">
                                     Pricing
                                 </a>
                             </li>
                             <li class="dropdown submenu nav-item"><a title="Pages" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">More</a>
                                 <ul role="menu" class=" dropdown-menu">
 
-                                    <li class="nav-item"><a title="Team" class="nav-link" href="team.html">Team</a></li>
+                                    <li class="nav-item"><a title="FAQ" class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li>
 
-                                    <li class="nav-item"><a title="FAQ" class="nav-link" href="faq.html">FAQ</a></li>
-
-                                    <li class="nav-item"><a title="Contact 02" class="nav-link" href="contact-2.html">Contact</a></li>
+                                    <li class="nav-item"><a title="Contact" class="nav-link" href="{% url 'core:contact' %}">Contact</a></li>
                                 </ul>
                             </li>                         
                         </ul>
@@ -110,7 +108,7 @@
             <img class="breadcrumb_shap" src="{% static 'assets/img/breadcrumb/banner_bg.png' %}" alt="">
             <div class="container">
                 <div class="breadcrumb_content text-center">
-                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Our process</h1>
+                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Our samples</h1>
                     <p class="f_400 w_color f_size_16 l_height26">Why I say old chap that is spiffing off his nut arse pear shaped plastered<br> Jeffrey bodge barney some dodgy.!!</p>
                 </div>
             </div>
@@ -262,7 +260,7 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
                             <div class="f_widget company_widget">
-                                <a href="index.html" class="f-logo"><img src="img/logo.png" alt=""></a>
+                                <a href="index.html" class="f-logo"><img src="{% static 'assets/img/logo.png' %}" srcset="img/logo2x.png 2x" alt=""></a>
                                 <div class="widget-wrap">
                                     <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Email:</span> <a href="mailto:saasland@gmail.com" class="f_400">saasland@gmail.com</a></p>
                                     <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Phone:</span> <a href="tel:948256347968" class="f_400">+948 256 347 968</a></p>

@@ -13,3 +13,12 @@ def samples(request):
 
 def pricing(request):
     return render(request, 'core/pricing.html', {})
+
+def team(request):
+    return render(request, 'core/team.html', {})
+
+def faq(request):
+    return render(request, 'core/faq.html', {})
+
+def contact(request):
+    return render(request, 'core/contact.html', {})
