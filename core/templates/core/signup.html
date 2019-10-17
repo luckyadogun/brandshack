@@ -70,7 +70,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav pl_100 mr-auto menu">
                                         <li class="nav-item dropdown submenu mega_menu mega_menu_two active">
-                                            <a class="nav-link dropdown-toggle" href="{% url 'core:index' %}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <a class="nav-link" href="{% url 'core:index' %}" role="button" aria-haspopup="true" aria-expanded="false">
                                                 Home
                                             </a>
                                         </li>
@@ -136,27 +136,28 @@
                         <div class="col-lg-7">
                             <div class="login_info">
                                 <h2 class="f_p f_600 f_size_24 t_color3 mb_40" align="center">Enter your details below to continue</h2>
-                                <form action="#" class="login-form sign-in-form">
+                                <form action="." class="login-form sign-in-form" method="POST">
+                                    {% csrf_token %}
                                     <div class="form-group text_box">
-                                        <label class="f_p text_c f_400">First name</label>
-                                        <input type="text" placeholder="First Name">
+                                        <label class="f_p text_c f_400">First Name</label>
+                                        <input type="text" placeholder="First Name" name="f_name">
                                     </div>
                                     <div class="form-group text_box">
                                         <label class="f_p text_c f_400">Last name</label>
-                                        <input type="text" placeholder="Last Name">
+                                        <input type="text" placeholder="Last Name" name="l_name">
                                     </div>
                                     <div class="form-group text_box">
                                         <label class="f_p text_c f_400">Email Address</label>
-                                        <input type="text" placeholder="saasland@gmail.com" value="{{ email }}">
+                                        <input type="text" placeholder="saasland@gmail.com" value="{{ email }}" name="email">
                                     </div>
                                     <div class="form-group text_box">
                                         <label class="f_p text_c f_400">Password</label>
-                                        <input type="password" placeholder="******">
+                                        <input type="password" placeholder="******" name="password">
                                     </div>
                                     <div class="extra mb_20">
                                         <div class="checkbox remember">
                                             <label>
-                                                <input type="checkbox"> I agree to terms and conditions of this website
+                                                <input type="checkbox" name="tos" value="YES"> I agree to terms and conditions of this website
                                             </label>
                                         </div>
                                         <!--//check-box-->
@@ -165,7 +166,7 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <button type="submit" class="btn_three">Sign Up</button>
+                                        <input type="submit" class="btn_three" value="Sign Up" />
                                         <div class="social_text d-flex ">
                                             <div class="lead-text">Or Sign up Using</div>
                                             <ul class="list-unstyled social_tag mb-0">
