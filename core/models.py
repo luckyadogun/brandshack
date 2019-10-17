@@ -17,3 +17,28 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.get_full_name()
+
+
+
+class AbandonedSignup(models.Model):
+    """
+    A model to capture the prospects who didn't complete the signup process.
+
+    - on signup, check if the users email is here, if it is, remove it totally.
+    
+    - the purpose is to use a cron or celery task to notify them with goodies
+    until they sign-up. In business terms, they get emailed every lead magnet we
+    create.
+
+    TODO:
+        - connect these email with our newsletter for lead magnet goodie (Build trust and credibility)
+    """
+    email = models.EmailField(blank=True, null=True, unique=True)
+
+    def __str__(self):
+        return self.email
+
+
+class Customer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
