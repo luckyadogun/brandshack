@@ -7,6 +7,10 @@ from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.core.mail import EmailMessage
+
+# --------- third-party -----------#
+from anymail.message import attach_inline_image_file
+
 # --------- forms imports -----------
 from .forms import TrialForm, SignupForm
 
@@ -58,12 +62,13 @@ def signup(request, email=None):
             # set activation link
             current_site = get_current_site(request)
             mail_subject = 'Activate your account'
-            message = render_to_string('acc_active_email.html', {
+            message = render_to_string('core/email/activate_account.html', {
                 'user': "{} {}".format(user.first_name, user.last_name),
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
                 'token': account_activation_token.make_token(user),
             })
+
             email = EmailMessage(mail_subject, message, to=[email_add])
             return activate_account(request, email=email_add)
         else:
