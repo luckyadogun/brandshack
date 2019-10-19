@@ -14,6 +14,8 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('signup/', views.signup, name='signup'),
     path('login/', views.login, name='login'),
+    path('activate-account/', views.activate_account, name='activate-account'),
+    path('activate/<uidb64>/<token>', views.activate, name='activate'),
 ]
 
 urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

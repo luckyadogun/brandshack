@@ -107,99 +107,17 @@
                     </nav>
                 </header>
 
-        <!-- <section class="breadcrumb_area">
-            <img class="breadcrumb_shap" src="img/breadcrumb/banner_bg.png" alt="">
+        <section class="download_area">
             <div class="container">
-                <div class="breadcrumb_content text-center">
-                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Sign Up</h1>
-                    <p class="f_400 w_color f_size_16 l_height26">Why I say old chap that is spiffing off his nut arse pear shaped plastered<br> Jeffrey bodge barney some dodgy.!!</p>
-                </div>
-            </div>
-        </section> -->
-
-        <section class="sign_in_area bg_color sec_pad">
-            <div class="container">
-                <div class="sign_info">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <div class="sign_info_content">
-                                <h3 class="f_p f_600 f_size_24 t_color3 mb_40">Already have an account?</h3>
-                                <h2 class="f_p f_400 f_size_30 mb-30">Login now and<br> starting using our <br><span class="f_700">amazing</span> products</h2>
-                                <ul class="list-unstyled mb-0">
-                                    <li><i class="ti-check"></i> Premium Access to all Products</li>
-                                    <li><i class="ti-check"></i> Free Testing Tools</li>
-                                    <li><i class="ti-check"></i> Unlimited User Accounts</li>
-                                </ul>
-                                <input type="button" onclick="location.href='{% url 'core:login' %}';" value="Sign In" class="btn_three sign_btn_transparent" />
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="login_info">
-                                <h2 class="f_p f_600 f_size_24 t_color3 mb_40" align="center">Enter your details below to continue</h2>
-                                <form action="." class="login-form sign-in-form" method="POST">
-                                    {% csrf_token %}
-                                    <div class="form-group text_box">
-                                        <label class="f_p text_c f_400">First Name</label>
-                                        <input type="text" placeholder="First Name" name="f_name">
-                                    </div>
-                                    <div class="form-group text_box">
-                                        <label class="f_p text_c f_400">Last name</label>
-                                        <input type="text" placeholder="Last Name" name="l_name">
-                                    </div>
-                                    <div class="form-group text_box">
-                                        <label class="f_p text_c f_400">Email Address</label>
-                                        <input type="text" placeholder="saasland@gmail.com" value="{{ email }}" name="email">
-                                    </div>
-                                    <div class="form-group text_box">
-                                        <label class="f_p text_c f_400">Password</label>
-                                        <input type="password" placeholder="******" name="password">
-                                    </div>
-                                    <div class="form-group text_box">
-                                        <label class="f_p text_c f_400">Password Again</label>
-                                        <input type="password" placeholder="******" name="password2">
-                                    </div>  
-
-                                    {% if messages %}
-                                        {% for message in messages %}
-                                        <div class="alert error">
-                                            <div class="alert_body">
-                                                <i class="icon-close"></i>
-                                                {{ message }}
-                                            </div>
-                                            <div class="alert_close"><i class="icon_close"></i></div>
-                                        </div>
-                                        {% endfor %}
-                                    {% endif %}           
-
-                                    <div class="extra mb_20">
-                                        <div class="checkbox remember">
-                                            <label>
-                                                <input type="checkbox" name="tos" value="YES"> I agree to terms and conditions of this website
-                                            </label>
-                                        </div>
-                                        <!--//check-box-->
-                                        <div class="forgotten-password">
-                                            <a href="#">Forgot Password?</a>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <input type="submit" class="btn_three" value="Sign Up" />
-                                        <div class="social_text d-flex ">
-                                            <div class="lead-text">Or Sign up Using</div>
-                                            <ul class="list-unstyled social_tag mb-0">
-                                                <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                                <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                                                <li><a href="#"><i class="ti-google"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>                                    
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                <div class="download_content thanks_content">
+                    <img class="img-fluid" src="{% static 'assets/img/new/mockup/rocket.png' %}" alt="">
+                    <h2>Thank you for your Subscription!</h2>
+                    <p>We’ve sent an activation email to <a href="mailto: {{ email }}">{{ email }}</a></p>
+                    <a href="#">Resend Email<i class="arrow_right"></i></a>
                 </div>
             </div>
         </section>
+
         <footer class="footer_area footer_area_four f_bg">
             <div class="footer_top">
                 <div class="container">

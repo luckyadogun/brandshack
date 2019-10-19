@@ -53,7 +53,6 @@ class Customer(models.Model):
     customer_id = models.UUIDField(default=uuid.uuid4, editable=False, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     current_plan = models.CharField(max_length=100, choices=PLANS, blank=True)
-
     # current_plan_expires = models.DateTimeField() # 30 days after expiry date
 
 
@@ -75,4 +74,8 @@ class Customer(models.Model):
     #         self.QUOTA = self.QUOTA
 
     #     return self.QUOTA
+
+
+    def __str__(self):
+        return "{} {} {}".format(self.customer_id, self.user.first_name, self.user.last_name)
 
