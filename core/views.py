@@ -1,15 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
-
-from django.contrib.sites.shortcuts import get_current_site
-from django.template.loader import render_to_string
-from django.utils.encoding import force_bytes, force_text
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.core.mail import EmailMessage
-
-# --------- third-party -----------#
-from anymail.message import attach_inline_image_file
+from django.utils.encoding import force_text
+from django.utils.http import urlsafe_base64_decode
+from django.contrib.auth import authenticate, login, logout
 
 # --------- forms imports -----------
 from .forms import TrialForm, SignupForm
@@ -17,16 +11,19 @@ from .forms import TrialForm, SignupForm
 # --------- model imports -----------
 from .models import User, AbandonedSignup, Customer
 from .tokens import account_activation_token
+from .helpers import _email_activate_acct
 
 
 # ---------- views ----------------
-
 def index(request):
     if request.method == 'POST':
         trial_form = TrialForm(request.POST)
         if trial_form.is_valid():
             email = trial_form.cleaned_data['email']
             try:
+                #TODO:
+                # add user to a newsletter for reminders
+                # notify admin
                 AbandonedSignup.objects.create(email=email)
             except:
                 pass
@@ -44,39 +41,42 @@ def signup(request, email=None):
     password = request.POST.get('password')
     password2 = request.POST.get('password2')
 
-    if tos and first_name and last_name and email and password and password2:
+    if tos:
         if password == password2:
             # check if user was in abandoned signup and remove
             ab_user = AbandonedSignup.objects.filter(email=email_add)
             if ab_user.filter().exists():
                 ab_user.delete()
 
-            user = User.objects.create(
-                first_name=first_name, 
-                last_name=last_name,
-                email=email_add,)
-            user.set_password(password)
-            user.is_active = False
-            user.save()
-            Customer.objects.create(user=user)
-            # set activation link
-            current_site = get_current_site(request)
-            mail_subject = 'Activate your account'
-            message = render_to_string('core/email/activate_account.html', {
-                'user': "{} {}".format(user.first_name, user.last_name),
-                'domain': current_site.domain,
-                'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
-                'token': account_activation_token.make_token(user),
-            })
+            try:
+                user = User.objects.create(
+                    first_name=first_name, 
+                    last_name=last_name,
+                    email=email_add,)
+                user.set_password(password)
+                user.is_active = False
+                user.save()
+                Customer.objects.create(user=user)
 
-            email = EmailMessage(mail_subject, message, to=[email_add])
-            return activate_account(request, email=email_add)
+                # send activation link
+                _email_activate_acct(request, user_pk=user.pk)
+                return activate_account(request, email=email_add)
+            except:
+                # user already has an account
+                messages.error(request, "You already have an account! Try logging in.")
+                return redirect('/login/')
+
         else:
             messages.error(request, "Passwords doesn't match. Try again!")
     return render(request, 'core/signup.html', {'email': email if email else ''})
 
 
+def activate_account(request, email=None):
+    "view function to handle notify user of activation link"
+    return render(request, 'core/activate_acct.html', {'email': email if email else ''})
+
 def activate(request, uidb64, token):
+    "a view function to activate account"
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
@@ -86,11 +86,27 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        # login user
-        # login(request, user)
-        # redirect user to login with message of their active account
+        messages.error(request, "You account is active! Log in")
+        return redirect('/login/')
     else:
-        # return user to activation page with message - activation link is invalid 
+       return redirect('/activate-account/')
+
+def login_user(request):
+    email_add = request.POST.get('email')
+    password = request.POST.get('password')
+
+    print(email_add)
+    print(password)
+
+    if email_add and password:
+        user = authenticate(email=email_add, password=password)
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect('Welcome to dashboard')
+        else:
+            messages.error(request, "account does not exist")
+            return redirect('/login/')
+    return render(request, 'core/login.html', {})
 
 def how_it_works(request):
     return render(request, 'core/how-it-works.html', {})
@@ -109,9 +125,3 @@ def faq(request):
 
 def contact(request):
     return render(request, 'core/contact.html', {})
-
-def login(request):
-    return render(request, 'core/login.html', {})
-
-def activate_account(request, email=None):
-    return render(request, 'core/activate_acct.html', {'email': email if email else ''})

@@ -42,11 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'anymail',
 ]
 
 AUTH_USER_MODEL = 'core.User'
+AUTHENTICATION_BACKENDS = (
+    'core.backends.EmailAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    )
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -124,12 +126,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-# Email settings
-ANYMAIL = {
-    "SENDGRID_API_KEY": "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",
-}
-EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
 
 
 

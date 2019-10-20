@@ -136,21 +136,33 @@
                             <div class="col-lg-7">
                                 <div class="login_info">
                                     <h2 class="f_p f_600 f_size_24 t_color3 mb_40">Sign In</h2>
-                                    <form action="#" class="login-form sign-in-form">
+                                    <form action="." class="login-form sign-in-form" method="POST">
+                                        {% csrf_token %}
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                            <div class="alert info">
+                                                <div class="alert_body">
+                                                    <i class="icon-close"></i>
+                                                    {{ message }}
+                                                </div>
+                                                <div class="alert_close"><i class="icon_close"></i></div>
+                                            </div>
+                                            {% endfor %}
+                                        {% endif %}           
                                         <div class="form-group text_box">
-                                            <label class="f_p text_c f_400">Email or Name</label>
-                                            <input type="text" placeholder="saasland@gmail.com">
+                                            <label class="f_p text_c f_400">Email</label>
+                                            <input type="text" placeholder="john.doe@gmail.com" name="email">
                                         </div>
                                         <div class="form-group text_box">
                                             <label class="f_p text_c f_400">Password</label>
-                                            <input type="password" placeholder="******">
+                                            <input type="password" placeholder="******" name="password">
                                         </div>
                                         <div class="extra mb_20">
-                                            <div class="checkbox remember">
+                                            <!-- <div class="checkbox remember">
                                                 <label>
                                                     <input type="checkbox"> Keep me Signed in
                                                 </label>
-                                            </div>
+                                            </div> -->
                                             <!--//check-box-->
                                             <div class="forgotten-password">
                                                 <a href="#">Forgot Password?</a>
@@ -158,14 +170,14 @@
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <button type="submit" class="btn_three">Sign in</button>
-                                            <div class="social_text d-flex ">
+                                            <!-- <div class="social_text d-flex ">
                                                 <div class="lead-text">Don't have an account?</div>
                                                 <ul class="list-unstyled social_tag mb-0">
                                                     <li><a href="#"><i class="ti-facebook"></i></a></li>
                                                     <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
                                                     <li><a href="#"><i class="ti-google"></i></a></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </form>
                                 </div>
