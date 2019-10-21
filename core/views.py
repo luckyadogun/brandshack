@@ -1,17 +1,18 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # --------- forms imports -----------
-from .forms import TrialForm, SignupForm
+from .forms import TrialForm
 
 # --------- model imports -----------
 from .models import User, AbandonedSignup, Customer
 from .tokens import account_activation_token
-from .helpers import _email_activate_acct
+from .helpers import _email_activate_acct, _email_design_request, generate_customer_id
 
 
 # ---------- views ----------------
@@ -56,7 +57,7 @@ def signup(request, email=None):
                 user.set_password(password)
                 user.is_active = False
                 user.save()
-                Customer.objects.create(user=user)
+                Customer.objects.create(user=user, customer_id=generate_customer_id())
 
                 # send activation link
                 _email_activate_acct(request, user_pk=user.pk)
@@ -94,19 +95,24 @@ def activate(request, uidb64, token):
 def login_user(request):
     email_add = request.POST.get('email')
     password = request.POST.get('password')
-
-    print(email_add)
-    print(password)
-
     if email_add and password:
         user = authenticate(email=email_add, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect('Welcome to dashboard')
+            return redirect('/dashboard/')
         else:
             messages.error(request, "account does not exist")
             return redirect('/login/')
     return render(request, 'core/login.html', {})
+
+@login_required
+def dashboard(request):
+    customer = get_object_or_404(Customer, user=request.user.id)
+    platform = request.POST.get('platform')
+    brief = request.POST.get('brief')
+    _email_design_request(customer=customer, platform=platform, brief=brief)
+    messages.success(request, "Your request has been sent!")
+    return render(request, 'core/dashboard.html', {})
 
 def how_it_works(request):
     return render(request, 'core/how-it-works.html', {})
@@ -125,3 +131,7 @@ def faq(request):
 
 def contact(request):
     return render(request, 'core/contact.html', {})
+
+def logout_user(request):
+    logout(request)
+    return index(request)

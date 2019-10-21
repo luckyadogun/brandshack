@@ -100,7 +100,11 @@
                             </li>                         
                         </ul>
 
-                        <a class="btn_get btn_hover hidden-sm hidden-xs" href="{% url 'core:login' %}">Sign In</a>
+                        {% if user.is_authenticated %}
+                            <a class="btn_get btn_hover hidden-sm hidden-xs" href="{% url 'core:logout' %}">Logout</a>
+                        {% else %}
+                            <a class="btn_get btn_hover hidden-sm hidden-xs" href="{% url 'core:login' %}">Sign In</a>
+                        {% endif %}
                     </div>
                 </div>
             </nav>

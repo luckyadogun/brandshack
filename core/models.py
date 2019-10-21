@@ -44,38 +44,10 @@ class AbandonedSignup(models.Model):
 
 class Customer(models.Model):
 
-    PLANS = (
-        ('Free', 'Free'),
-        ('Mini', 'Mini'),
-        ('Biggie', 'Biggie'),
-        ('Maxxie', 'Maxxie')
-    )
-    customer_id = models.UUIDField(default=uuid.uuid4, editable=False, blank=True)
+    customer_id = models.CharField(max_length=200, blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    current_plan = models.CharField(max_length=100, choices=PLANS, blank=True)
-    # current_plan_expires = models.DateTimeField() # 30 days after expiry date
-
-
-    # def user_quota(self, user_plan):
-    #     "calls set_quota to know the user quota so it can be subtracted from request"
-    #     pass
-
-    # def _set_quota(self, plan):
-    #     "this method is called after the user makes payment for a plan"
-    #     if plan == 'Free':
-    #         self.QUOTA = 1
-    #     elif plan == 'Mini':
-    #         self.QUOTA = 10
-    #     elif plan == 'Biggie':
-    #         self.QUOTA = 20
-    #     elif plan == 'Maxxie':
-    #         self.QUOTA = 30
-    #     else:
-    #         self.QUOTA = self.QUOTA
-
-    #     return self.QUOTA
-
+    
 
     def __str__(self):
-        return "{} {} {}".format(self.customer_id, self.user.first_name, self.user.last_name)
+        return "{} {}".format(self.customer_id, self.user.get_full_name())
 

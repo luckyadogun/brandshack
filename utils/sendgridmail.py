@@ -4,9 +4,9 @@ from sendgrid.helpers.mail import Mail
 
 from decouple import config
 
-def send_email(recipient=None, subject=None, html_content=None):
+def send_email(recipient=None, subject=None, html_content=None, from_email=None):
     message = Mail(
-        from_email='noreply@brandshack.co',
+        from_email=from_email,
         to_emails=recipient,
         subject=subject,
         html_content=html_content,)

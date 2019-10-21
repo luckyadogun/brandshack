@@ -49,6 +49,10 @@ AUTHENTICATION_BACKENDS = (
     'core.backends.EmailAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
     )
+LOGIN_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/login/'
+
+APPEND_SLASH = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

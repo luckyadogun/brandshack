@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
-    <title>BrandShack - Portfolio</title>
+    <title>Dashboard</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
     <!--icon font css-->
@@ -72,7 +72,7 @@
                                 <a class="nav-link dropdown-toggle" href="{% url 'core:index' %}" role="button" aria-haspopup="true" aria-expanded="false">
                                     Home
                                 </a>
-                            </li>
+                            </li>                       
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'core:how-it-works' %}" role="button" aria-haspopup="true" aria-expanded="false">
                                     How it works
@@ -92,15 +92,16 @@
                                 <ul role="menu" class=" dropdown-menu">
 
                                     <li class="nav-item"><a title="Team" class="nav-link" href="{% url 'core:team' %}">Team</a></li>
-                                    
+
                                     <li class="nav-item"><a title="FAQ" class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li>
 
                                     <li class="nav-item"><a title="Contact" class="nav-link" href="{% url 'core:contact' %}">Contact</a></li>
                                 </ul>
-                            </li>                         
+                            </li>                      
                         </ul>
 
                         {% if user.is_authenticated %}
+                            <a class="btn_hover agency_banner_btn cus_mb-10" href="{% url 'core:dashboard' %}">Request Design</a>
                             <a class="btn_get btn_hover hidden-sm hidden-xs" href="{% url 'core:logout' %}">Logout</a>
                         {% else %}
                             <a class="btn_get btn_hover hidden-sm hidden-xs" href="{% url 'core:login' %}">Sign In</a>
@@ -110,156 +111,60 @@
             </nav>
         </header>
 
-        <section class="breadcrumb_area">
-            <img class="breadcrumb_shap" src="{% static 'assets/img/breadcrumb/banner_bg.png' %}" alt="">
+        <section class="breadcrumb_area" style="background-image: url('{% static 'assets/img/Img-08.jpg' %}'); background-position:  center center; background-repeat: no-repeat; background-size: cover;">
             <div class="container">
                 <div class="breadcrumb_content text-center">
-                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Our samples</h1>
+                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Meet The Team</h1>
                     <p class="f_400 w_color f_size_16 l_height26">Why I say old chap that is spiffing off his nut arse pear shaped plastered<br> Jeffrey bodge barney some dodgy.!!</p>
                 </div>
             </div>
         </section>
 
-        <section class="portfolio_fullwidth_area bg_color">
+        <section class="contact_info_area sec_pad bg_color">
             <div class="container">
-                <div id="portfolio_filter" class="portfolio_filter mb_50">
-                    <div data-filter="*" class="work_portfolio_item active">See All</div>
-                    <div data-filter=".br" class="work_portfolio_item">Facebook</div>
-                    <div data-filter=".web" class="work_portfolio_item">Instagram</div>
-                    <div data-filter=".fashion" class="work_portfolio_item">Twitter</div>
-                </div>
-            </div>
-            <div class="container-fluid pl-0 pr-0">
-                <div class="row portfolio_gallery ml-0 mr-0" id="work-portfolio">
-                    <div class="col-lg-4 col-sm-6 portfolio_item br ux p0">
-                        <div class="portfolio_img">
-                            <img src="{% static 'assets/img/portfolio/full-width/full_img_1.jpg' %}" alt="">
-                            <div class="hover_content">
-                                <a href="{% static 'assets/img/portfolio/full-width/full_img_1.jpg' %}" class="img_popup leaf"><i class="ti-plus"></i></a>
-                                <div class="portfolio-description leaf">
-                                    <a href="work-default.html" class="portfolio-title">
-                                        <h3 class="f_500 f_size_20 f_p">Apple Mobile Mockup</h3>
-                                    </a>
-                                    <div class="links"><a href="#">Branding,</a><a href="#">Fashion</a></div>
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="col-lg-3 pr-0">
+                        <div class="contact_info_item">
+                            <h6 class="f_p f_size_20 t_color3 f_500 mb_20">Hi {{ request.user }}!</h6>
+                            <p class="f_400 f_size_15">Melbourne’s GPO 434 Bourke St. Dhaka VIC 3074, Australia</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 portfolio_item fashion web p0">
-                        <div class="portfolio_img">
-                            <img src="{% static 'assets/img/portfolio/full-width/full_img_2.jpg' %}" alt="">
-                            <div class="hover_content">
-                                <a href="{% static 'assets/img/portfolio/full-width/full_img_2.jpg' %}" class="img_popup leaf"><i class="ti-plus"></i></a>
-                                <div class="portfolio-description leaf">
-                                    <a href="work-default.html" class="portfolio-title">
-                                        <h3 class="f_500 f_size_20 f_p">Interior Design</h3>
-                                    </a>
-                                    <div class="links"><a href="#">Branding,</a><a href="#">Fashion</a></div>
+                    <div class="col-lg-8 offset-lg-1">
+                        <div class="contact_form">
+                            <form action="." class="contact_form_box" method="post" id="contactForm2" novalidate="novalidate">
+                                {% csrf_token %}
+                                
+                                {% if messages %}
+                                    {% for message in messages %}
+                                    <div class="alert success">
+                                        <div class="alert_body">
+                                            <i class="icon-close"></i>
+                                            {{ message }}
+                                        </div>
+                                        <div class="alert_close"><i class="icon_close"></i></div>
+                                    </div>
+                                    {% endfor %}
+                                {% endif %}      
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group text_box">
+                                            <input type="text" id="subject" name="platform" placeholder="Platform: Facebook, Instagram, Twitter">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group text_box">
+                                            <textarea id="message" name="brief" placeholder="Project Description"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 portfolio_item product br p0">
-                        <div class="portfolio_img">
-                            <img src="{% static 'assets/img/portfolio/full-width/full_img_3.jpg' %}" alt="">
-                            <div class="hover_content">
-                                <a href="{% static 'assets/img/portfolio/full-width/full_img_3.jpg' %}" class="img_popup leaf"><i class="ti-plus"></i></a>
-                                <div class="portfolio-description leaf">
-                                    <a href="work-default.html" class="portfolio-title">
-                                        <h3 class="f_500 f_size_20 f_p">Portfolio Center Slider</h3>
-                                    </a>
-                                    <div class="links"><a href="#">Branding,</a><a href="#">Fashion</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 portfolio_item ux web p0">
-                        <div class="portfolio_img">
-                            <img src="{% static 'assets/img/portfolio/full-width/full_img_4.jpg' %}" alt="">
-                            <div class="hover_content">
-                                <a href="{% static 'assets/img/portfolio/full-width/full_img_4.jpg' %}" class="img_popup leaf"><i class="ti-plus"></i></a>
-                                <div class="portfolio-description leaf">
-                                    <a href="work-default.html" class="portfolio-title">
-                                        <h3 class="f_500 f_size_20 f_p">Portfolio Masonry</h3>
-                                    </a>
-                                    <div class="links"><a href="#">Branding,</a><a href="#">Fashion</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 portfolio_item br ux p0">
-                        <div class="portfolio_img">
-                            <img src="{% static 'assets/img/portfolio/full-width/full_img_5.jpg' %}" alt="">
-                            <div class="hover_content">
-                                <a href="{% static 'assets/img/portfolio/full-width/full_img_5.jpg' %}" class="img_popup leaf"><i class="ti-plus"></i></a>
-                                <div class="portfolio-description leaf">
-                                    <a href="work-default.html" class="portfolio-title">
-                                        <h3 class="f_500 f_size_20 f_p">Double Exposure</h3>
-                                    </a>
-                                    <div class="links"><a href="#">Branding,</a><a href="#">Fashion</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 portfolio_item fashion web p0">
-                        <div class="portfolio_img">
-                            <img src="{% static 'assets/img/portfolio/full-width/full_img_6.jpg' %}" alt="">
-                            <div class="hover_content">
-                                <a href="{% static 'assets/img/portfolio/full-width/full_img_6.jpg' %}" class="img_popup leaf"><i class="ti-plus"></i></a>
-                                <div class="portfolio-description leaf">
-                                    <a href="work-default.html" class="portfolio-title">
-                                        <h3 class="f_500 f_size_20 f_p">American Burger</h3>
-                                    </a>
-                                    <div class="links"><a href="#">Branding,</a><a href="#">Fashion</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 portfolio_item product br p0">
-                        <div class="portfolio_img">
-                            <img src="{% static 'assets/img/portfolio/full-width/full_img_7.jpg' %}" alt="">
-                            <div class="hover_content">
-                                <a href="{% static 'assets/img/portfolio/full-width/full_img_7.jpg' %}" class="img_popup leaf"><i class="ti-plus"></i></a>
-                                <div class="portfolio-description leaf">
-                                    <a href="work-default.html" class="portfolio-title">
-                                        <h3 class="f_500 f_size_20 f_p">Apple Laptop Mockup</h3>
-                                    </a>
-                                    <div class="links"><a href="#">Branding,</a><a href="#">Fashion</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 portfolio_item ux web p0">
-                        <div class="portfolio_img">
-                            <img src="{% static 'assets/img/portfolio/full-width/full_img_8.jpg' %}" alt="">
-                            <div class="hover_content">
-                                <a href="{% static 'assets/img/portfolio/full-width/full_img_8.jpg' %}" class="img_popup leaf"><i class="ti-plus"></i></a>
-                                <div class="portfolio-description leaf">
-                                    <a href="work-default.html" class="portfolio-title">
-                                        <h3 class="f_500 f_size_20 f_p">Inner Smart Watch</h3>
-                                    </a>
-                                    <div class="links"><a href="#">Branding,</a><a href="#">Fashion</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 portfolio_item ux web p0">
-                        <div class="portfolio_img">
-                            <img src="{% static 'assets/img/portfolio/full-width/full_img_9.jpg' %}" alt="">
-                            <div class="hover_content">
-                                <a href="{% static 'assets/img/portfolio/full-width/full_img_9.jpg' %}" class="img_popup leaf"><i class="ti-plus"></i></a>
-                                <div class="portfolio-description leaf">
-                                    <a href="work-default.html" class="portfolio-title">
-                                        <h3 class="f_500 f_size_20 f_p">Inner Smart Watch</h3>
-                                    </a>
-                                    <div class="links"><a href="#">Branding,</a><a href="#">Fashion</a></div>
-                                </div>
-                            </div>
+                                <button type="submit" class="btn_three">Send Request</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
         <footer class="footer_area footer_area_four f_bg">
             <div class="footer_top">
                 <div class="container">
@@ -305,7 +210,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-3 col-md-6 pl-20">
                             <div class="f_widget about-widget">
                                 <h3 class="f-title f_600 t_color f_size_18 mb_40">Team Solutions</h3>
                                 <ul class="list-unstyled f_list">
@@ -358,7 +263,14 @@
     <script src="{% static 'assets/vendors/isotope/isotope-min.js' %}"></script>
     <script src="{% static 'assets/vendors/magnify-pop/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'assets/vendors/scroll/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB13ZAvCezMx5TETYIiGlzVIq65Mc2FG5g"></script>
+    <script src="{% static 'assets/js/gmaps.min.js' %}"></script>
     <script src="{% static 'assets/js/plugins.js' %}"></script>
+    <!-- contact js -->
+    <script src="{% static 'assets/js/jquery.form.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/js/contact.js' %}"></script>
     <script src="{% static 'assets/js/main.js' %}"></script>
 </body>
 
