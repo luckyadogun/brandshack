@@ -85,11 +85,11 @@
                                     Samples
                                 </a>
                             </li>
-                            <li class="nav-item submenu mega_menu">
+                            <!-- <li class="nav-item submenu mega_menu">
                                 <a class="nav-link" href="{% url 'core:pricing' %}" role="button" aria-haspopup="true" aria-expanded="false">
                                     Pricing
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="dropdown submenu nav-item"><a title="Pages" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">More</a>
                                 <ul role="menu" class=" dropdown-menu">
 
@@ -167,12 +167,12 @@
                     <div class="support_item">
                         <img src="{% static 'assets/img/new-home/ticket-support.png' %}" alt="">
                         <h4>Create "CTR-Boost"&trade; Banner</h4>
-                        <a href="#" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
+                        <a href="{% url 'core:signup' %}" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
                     </div>
                     <div class="support_item">
                         <img src="{% static 'assets/img/new-home/email.png' %}" alt="">
                         <h4>Refuel "CTR-Boost"&trade; Banner</h4>
-                        <a href="#" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
+                        <a href="{% url 'core:signup' %}" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                 </div>
             </div>
         </section>
-        <section class="support_integration_area">
+        <!-- <section class="support_integration_area">
             <div class="container">
                 <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
                     <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Software Integrations</h2>
@@ -341,7 +341,7 @@
                     </div> 
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- <section class="agency_testimonial_area sec_pad">
             <div class="container">
                 <h2 class="f_size_30 f_600 t_color3 l_height40 text-center mb_60 wow fadeInUp" data-wow-delay="0.1s">We've heard things like</h2>

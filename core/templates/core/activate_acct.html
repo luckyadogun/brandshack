@@ -84,11 +84,11 @@
                                             Samples
                                         </a>
                                     </li>
-                                    <li class="nav-item submenu mega_menu">
+                                    <!-- <li class="nav-item submenu mega_menu">
                                         <a class="nav-link" href="{% url 'core:pricing' %}" role="button" aria-haspopup="true" aria-expanded="false">
                                             Pricing
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li class="dropdown submenu nav-item"><a title="Pages" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">More</a>
                                         <ul role="menu" class=" dropdown-menu">
         
@@ -113,7 +113,7 @@
                     <img class="img-fluid" src="{% static 'assets/img/new/mockup/rocket.png' %}" alt="">
                     <h2>Thank you for your Subscription!</h2>
                     <p>We’ve sent an activation email to <a href="mailto: {{ email }}">{{ email }}</a></p>
-                    <a href="#">Resend Email<i class="arrow_right"></i></a>
+                    <!-- <a href="{% url 'core:activate-account' %}">Resend Email<i class="arrow_right"></i></a> -->
                 </div>
             </div>
         </section>

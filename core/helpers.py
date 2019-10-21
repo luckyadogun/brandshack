@@ -31,7 +31,7 @@ def _email_design_request(platform=None, brief=None, customer=None):
     "an email message for design requests from clients"
     mail_subject = 'Client design request'
     message = render_to_string('core/email/design_request.html', {
-        'client': customer,
+        'customer': customer,
         'platform': platform,
         'brief': brief
     })

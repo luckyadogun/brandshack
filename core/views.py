@@ -67,7 +67,6 @@ def signup(request, email=None):
                 # user already has an account
                 messages.error(request, "You already have an account! Try logging in.")
                 return redirect('/login/')
-
         else:
             messages.error(request, "Passwords doesn't match. Try again!")
     return render(request, 'core/signup.html', {'email': email if email else ''})
@@ -117,8 +116,6 @@ def dashboard(request):
             messages.success(request, "Your request has been sent!")
         except:
             messages.error(request, "There was an error sending your request. Try again!")
-    else:
-        messages.error(request, "Oooops! Enter both platform and design description!")
     return render(request, 'core/dashboard.html', {})
 
 def how_it_works(request):
@@ -144,11 +141,7 @@ def contact(request):
 
     if email_add and message:
         try:
-            print(name)
-            print(email_add)
-            print(subject)
-            print(message)
-            # _email_contact_us(sender=name, email=email_add, subject=subject, message=message)
+            _email_contact_us(sender=name, email=email_add, subject=subject, message=message)
             messages.success(request, "Your message has been sent!")
         except:
             messages.error(request, "There was an error sending your request. Try again!")
