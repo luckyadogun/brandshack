@@ -36,3 +36,15 @@ def _email_design_request(platform=None, brief=None, customer=None):
         'brief': brief
     })
     send_email(recipient='design@brandshack.co', subject=mail_subject, html_content=message, from_email='design@brandshack.co')
+
+
+def _email_contact_us(sender=None, email=None, subject=None, message=None):
+    "an email message for conatact form"
+    mail_subject = 'Hey, new contact information'
+    message = render_to_string('core/email/contact_us.html', {
+        'sender': sender,
+        'email': email,
+        'subject': subject,
+        'message': message,
+    })
+    send_email(recipient='helpdesk@brandshack.co', subject=mail_subject, html_content=message, from_email='helpdesk@brandshack.co')

@@ -103,6 +103,7 @@
                         </ul>
 
                         {% if user.is_authenticated %}
+                            <a class="btn_hover agency_banner_btn cus_mb-10" href="{% url 'core:dashboard' %}">Request Design</a>
                             <a class="btn_get btn_hover hidden-sm hidden-xs" href="{% url 'core:logout' %}">Logout</a>
                         {% else %}
                             <a class="btn_get btn_hover hidden-sm hidden-xs" href="{% url 'core:login' %}">Sign In</a>

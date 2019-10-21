@@ -12,7 +12,8 @@ from .forms import TrialForm
 # --------- model imports -----------
 from .models import User, AbandonedSignup, Customer
 from .tokens import account_activation_token
-from .helpers import _email_activate_acct, _email_design_request, generate_customer_id
+from .helpers import (_email_activate_acct, _email_design_request, 
+    _email_contact_us, generate_customer_id)
 
 
 # ---------- views ----------------
@@ -110,8 +111,14 @@ def dashboard(request):
     customer = get_object_or_404(Customer, user=request.user.id)
     platform = request.POST.get('platform')
     brief = request.POST.get('brief')
-    _email_design_request(customer=customer, platform=platform, brief=brief)
-    messages.success(request, "Your request has been sent!")
+    if platform and brief:
+        try:
+            _email_design_request(customer=customer, platform=platform, brief=brief)
+            messages.success(request, "Your request has been sent!")
+        except:
+            messages.error(request, "There was an error sending your request. Try again!")
+    else:
+        messages.error(request, "Oooops! Enter both platform and design description!")
     return render(request, 'core/dashboard.html', {})
 
 def how_it_works(request):
@@ -130,6 +137,21 @@ def faq(request):
     return render(request, 'core/faq.html', {})
 
 def contact(request):
+    name = request.POST.get('name')
+    email_add = request.POST.get('email')
+    subject = request.POST.get('subject')
+    message = request.POST.get('message')
+
+    if email_add and message:
+        try:
+            print(name)
+            print(email_add)
+            print(subject)
+            print(message)
+            # _email_contact_us(sender=name, email=email_add, subject=subject, message=message)
+            messages.success(request, "Your message has been sent!")
+        except:
+            messages.error(request, "There was an error sending your request. Try again!")
     return render(request, 'core/contact.html', {})
 
 def logout_user(request):
