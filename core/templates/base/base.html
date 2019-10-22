@@ -1,0 +1,138 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
+        <title>Brandshack - {% block title %}{% endblock %}</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-selector/css/bootstrap-select.min.css' %}">
+        <!--icon font css-->
+        <link rel="stylesheet" href="{% static 'assets/vendors/themify-icon/themify-icons.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/elagent/style.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/flaticon/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/animation/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/assets/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/nice-select/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/magnify-pop/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/scroll/jquery.mCustomScrollbar.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    </head>
+
+<body>
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <p class="text-center">Loading</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body_wrapper">
+        <header class="header_area">
+            <nav class="navbar navbar-expand-lg menu_one menu_four">
+                <div class="container">
+                    <a class="navbar-brand sticky_logo" href="{% url 'core:index' %}"><img src="{% static 'assets/img/logo.png' %}" srcset="{% static 'assets/img/logo2.png' %}" alt="logo"><img src="{% static 'assets/img/logo.png' %}" srcset="{% static 'assets/img/logo2x.png'%}" alt=""></a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="menu_toggle">
+                            <span class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            <span class="hamburger-cross">
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav menu w_menu pl_100 mr-auto">
+                            <li class="nav-item dropdown submenu mega_menu mega_menu_two">
+                                <a class="nav-link dropdown-toggle" href="{% url 'core:index' %}" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'core:how-it-works' %}" role="button" aria-haspopup="true" aria-expanded="false">
+                                    How it works
+                                </a>                            
+                            </li>
+                            <li class="nav-item submenu mega_menu">
+                                <a class="nav-link" href="{% url 'core:samples' %}" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Samples
+                                </a>
+                            </li>
+                            <!-- <li class="nav-item submenu mega_menu">
+                                <a class="nav-link" href="{% url 'core:pricing' %}" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Pricing
+                                </a>
+                            </li> -->
+                            <li class="dropdown submenu nav-item"><a title="Pages" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">More</a>
+                                <ul role="menu" class=" dropdown-menu">
+
+                                    <li class="nav-item"><a title="Team" class="nav-link" href="{% url 'core:team' %}">Team</a></li>
+
+                                    <!-- <li class="nav-item"><a title="FAQ" class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li> -->
+
+                                    <li class="nav-item"><a title="Contact" class="nav-link" href="{% url 'core:contact' %}">Contact</a></li>
+                                </ul>
+                            </li>                         
+                        </ul>
+
+                        {% if user.is_authenticated %}
+                            <a class="btn_hover agency_banner_btn cus_mb-10" href="{% url 'core:dashboard' %}">Request Design</a>
+                            <a class="btn_get btn_hover hidden-sm hidden-xs" href="{% url 'core:logout' %}">Logout</a>
+                        {% else %}
+                            <a class="btn_get btn_hover hidden-sm hidden-xs" href="{% url 'core:login' %}">Sign In</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+        
+        {% include 'base/footer.html' %}
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/propper.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wow/wow.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/sckroller/jquery.parallax-scroll.js' %}"></script>
+    <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/isotope/isotope-min.js' %}"></script>
+    <script src="{% static 'assets/vendors/magnify-pop/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/scroll/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

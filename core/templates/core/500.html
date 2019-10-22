@@ -5,8 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <title>Saasland</title>
+    <link rel="shortcut icon" href={% static 'assets/img/favicon.png' %}" type="image/x-icon">
+    <title>Internal Server Error</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
     <!--icon font css-->
@@ -116,41 +116,16 @@
             <div class="container flex">
                 <div class="error_contain text-center">
                     <div class="b_text">
-                        <h1 class="f_p w_color f_700">404</h1>
+                        <h1 class="f_p w_color f_700">500</h1>
                     </div>
                     <h2 class="f_p f_400 w_color f_size_40">page not found</h2>
                     <p class="w_color f_400">We’re sorry, the page you have looked for does not exist in our database! Maybe<br> go to our home page or try to use a search?</p>
-                    <a href="#" class="about_btn btn_hover mt_40">Go Back to home Page</a>
+                    <a href="{% url 'core:index' %}" class="about_btn btn_hover mt_40">Go Back to home Page</a>
                 </div>
             </div>
         </section>
-        <footer>
-            <div class="footer_bottom error_footer">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-5 col-sm-6">
-                            <p class="mb-0 f_400">Copyright © 2018 Desing by <a href="#">DroitThemes</a></p>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-sm-6">
-                            <div class="f_social_icon_two text-center">
-                                <a href="#"><i class="ti-facebook"></i></a>
-                                <a href="#"><i class="ti-twitter-alt"></i></a>
-                                <a href="#"><i class="ti-vimeo-alt"></i></a>
-                                <a href="#"><i class="ti-pinterest"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12">
-                            <ul class="list-unstyled f_menu text-right">
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Process</a></li>
-                                <li><a href="#">Pricing</a></li>
-                                <li><a href="#">Shop</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+
+        {% include 'base/footer.html' %}
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

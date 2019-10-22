@@ -413,7 +413,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="f_widget dark_widget company_widget">
-                            <a href="index.html" class="f-logo"><img src="{% static 'assets/img/logo2.png' %}" alt=""></a>
+                            <a href="{% url 'core:index' %}" class="f-logo"><img src="{% static 'assets/img/logo2.png' %}" alt=""></a>
                             <p>© 2019 BrandShack, LLC. All rights reserved.</p>
                             <!-- <div class="f_social_icon">
                                 <a href="#" class="ti-facebook"></a>
@@ -427,8 +427,6 @@
                         <div class="f_widget dark_widget about-widget pl_70">
                             <h3 class="f-title f_500 t_color f_size_18 mb_40">Company</h3>
                             <ul class="list-unstyled f_list">
-                                <!-- <li><a href="#">Blog</a></li>
-                                <li><a href="#">Partners</a></li> -->
                                 <li><a href="{% url 'core:team' %}">Team</a></li>
                                 <li><a href="#">Android app <small>(coming soon)</small></a></li>
                                 <li><a href="#">iOS app <small>(coming soon)</small></a></li>
@@ -439,12 +437,9 @@
                         <div class="f_widget dark_widget about-widget pl_20">
                             <h3 class="f-title f_500 t_color f_size_18 mb_40">Pages</h3>
                             <ul class="list-unstyled f_list">
+                                <li><a href="{% url 'core:index' %}">Home</a></li>
                                 <li><a href="{% url 'core:how-it-works' %}">How it works</a></li>
                                 <li><a href="{% url 'core:samples' %}">Samples</a></li>
-                                <!-- <li><a href="#">Term & conditions</a></li>
-                                <li><a href="#">Tools Market<small> (coming soon)</small></a></li>
-                                <li><a href="#">API <small>(coming soon)</small></a></li>
-                                <li><a href="#">Pricing</a></li> -->
                             </ul>
                         </div>
                     </div>
@@ -466,7 +461,6 @@
                             <h3 class="f-title f_500 t_color f_size_18 mb_40">Contact</h3>
                             <ul class="list-unstyled f_list">
                                 <li><a href="{% url 'core:contact' %}">Support</a></li>
-                                <!-- <li><a href="#">System Status</a></li> -->
                             </ul>
                         </div>
                     </div>
