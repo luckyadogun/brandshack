@@ -49,5 +49,5 @@ class Customer(models.Model):
     
 
     def __str__(self):
-        return "{} {}".format(self.customer_id, self.user.get_full_name())
+        return "{}-{}".format(self.customer_id, self.user.get_full_name())
 

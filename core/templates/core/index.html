@@ -118,16 +118,14 @@
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <h2 class="f_p f_size_40 l_height60 wow fadeInUp" data-wow-delay="0.3s">What would an <span class="f_700">extra 1.5% CTR</span><br>do for your <u>social</u> ad campaign?</h2>
-                            <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">BrandShack is a tool to create and optimize social media ad creatives for marketers.<br> Enter your email below to get invited!</p>
+                            <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">Create and optimize revenue-boosting social media ad creatives that gets results!<br> Get started for free. No credit card required!</p>
                             <form class="wow fadeInUp" data-wow-delay="0.6s" method="post" action=".">                                
                                 {% csrf_token %}
                                 <div class="input-group subcribes">
                                     {{ trial_form.email }}
                                     <!-- <input type="text" name="EMAIL" class="form-control memail" placeholder="saasland@gmail.com"> -->
-                                    <input type="submit" value="Start free trial" class="btn btn_submit f_size_15 f_500" />
+                                    <input type="submit" value="Get Started" class="btn btn_submit f_size_15 f_500" />
                                 </div>
-                                <p class="mchimp-errmessage" style="display: none;"></p>
-                                <p class="mchimp-sucmessage" style="display: none;"></p>
                             </form>
                         </div>
                     </div>
@@ -139,7 +137,7 @@
         </section>
         <section class="support_partner_logo_area">
             <div class="container">
-                <h4 class="f_size_18 f_400 f_p text-center l_height28 mb_50">Companies that use BrandShack to power their social media ads</h4>
+                <h4 class="f_size_18 f_400 f_p text-center l_height28 mb_50">Companies that use BrandShack to boost their ad results</h4>
                 <div class="row partner_info">
                     <div class="logo_item">
                         <a href="#"><img src="{% static 'assets/img/home3/logo_01.png' %}" alt=""></a>
@@ -167,12 +165,20 @@
                     <div class="support_item">
                         <img src="{% static 'assets/img/new-home/ticket-support.png' %}" alt="">
                         <h4>Create "CTR-Boost"&trade; Banner</h4>
-                        <a href="{% url 'core:signup' %}" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'core:dashboard' %}" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
+                        {% else %}
+                            <a href="{% url 'core:signup' %}" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
+                        {% endif %}
                     </div>
                     <div class="support_item">
                         <img src="{% static 'assets/img/new-home/email.png' %}" alt="">
                         <h4>Refuel "CTR-Boost"&trade; Banner</h4>
-                        <a href="{% url 'core:signup' %}" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'core:dashboard' %}" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
+                        {% else %}
+                            <a href="{% url 'core:signup' %}" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -180,8 +186,8 @@
         <section class="design_tab_area sec_pad">
             <div class="container">
                 <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
-                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Support in your door step</h2>
-                    <p class="f_400 f_size_16 mb-0">Show off show off pick your nose and blow off Elizabeth grub haggle<br> dropped a clanger cracking.!</p>
+                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">What you'll get</h2>
+                    <p class="f_400 f_size_16 mb-0">We've mastered the art of designing social media marketing ads that work.<br>Let's get your campaign started profitably!</p>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 d-flex align-items-center">
@@ -189,19 +195,19 @@
                             <li class="nav-item wow fadeInUp" data-wow-delay="0.4s">
                                 <a class="nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="one" aria-selected="true">
                                     <h5>Facebook Ads</h5>
-                                    <p>Design to development,<br> automated</p>
+                                    <p>Optimize your Facebook banner for higher CTR</p>
                                 </a>
                             </li>
                             <li class="nav-item wow fadeInUp" data-wow-delay="0.6s">
                                 <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="two" aria-selected="false">
                                     <h5>Instagram Ads</h5>
-                                    <p>Design to development,<br> automated</p>
+                                    <p>Create high-engagement Instagram ads</p>
                                 </a>
                             </li>
                             <li class="nav-item wow fadeInUp" data-wow-delay="0.8s">
                                 <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="three" aria-selected="false">
                                     <h5>Twitter Ads</h5>
-                                    <p>Design to development,<br> automated</p>
+                                    <p>Get Twitter ad designs that gains traction</p>
                                 </a>
                             </li>
                         </ul>
@@ -388,7 +394,7 @@
             <img class="h_leaf two wow fadeInUp" data-wow-delay="0.6s" src="{% static 'assets/img/new-home/tree-right.png' %}" alt="">
             <div class="container">
                 <div class="sec_title text-center mb_50 wow fadeInUp" data-wow-delay="0.3s">
-                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Start your free trial today</h2>
+                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Get started for FREE today</h2>
                     <p class="f_400 f_size_16 mb-0">Instant Sign Up. Cancel Anytime. No Credit Card Required.</p>
                 </div>
                 <form action="." class="support_subscribe" method="post" novalidate="true">
@@ -408,22 +414,22 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="f_widget dark_widget company_widget">
                             <a href="index.html" class="f-logo"><img src="{% static 'assets/img/logo2.png' %}" alt=""></a>
-                            <p>© 2019 SaasLand, LLC. All rights reserved. Proudly made in NY</p>
-                            <div class="f_social_icon">
+                            <p>© 2019 BrandShack, LLC. All rights reserved.</p>
+                            <!-- <div class="f_social_icon">
                                 <a href="#" class="ti-facebook"></a>
                                 <a href="#" class="ti-twitter-alt"></a>
                                 <a href="#" class="ti-vimeo-alt"></a>
                                 <a href="#" class="ti-pinterest"></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="f_widget dark_widget about-widget pl_70">
                             <h3 class="f-title f_500 t_color f_size_18 mb_40">Company</h3>
                             <ul class="list-unstyled f_list">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Partners</a></li>
-                                <li><a href="#">Careers</a></li>
+                                <!-- <li><a href="#">Blog</a></li>
+                                <li><a href="#">Partners</a></li> -->
+                                <li><a href="{% url 'core:team' %}">Team</a></li>
                                 <li><a href="#">Android app <small>(coming soon)</small></a></li>
                                 <li><a href="#">iOS app <small>(coming soon)</small></a></li>
                             </ul>
@@ -433,12 +439,12 @@
                         <div class="f_widget dark_widget about-widget pl_20">
                             <h3 class="f-title f_500 t_color f_size_18 mb_40">Help</h3>
                             <ul class="list-unstyled f_list">
-                                <li><a href="#">FAQ</a></li>
+                                <li><a href="{% url 'core:faq' %}">FAQ</a></li>
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Term & conditions</a></li>
-                                <li><a href="#">Tools Market</a></li>
-                                <li><a href="#">API <small>(coming soon)</small></a></li>
-                                <li><a href="#">Pricing</a></li>
+                                <!-- <li><a href="#">Tools Market<small> (coming soon)</small></a></li> -->
+                                <!-- <li><a href="#">API <small>(coming soon)</small></a></li> -->
+                                <!-- <li><a href="#">Pricing</a></li> -->
                             </ul>
                         </div>
                     </div>
@@ -446,8 +452,8 @@
                         <div class="f_widget dark_widget about-widget pl_20">
                             <h3 class="f-title f_500 t_color f_size_18 mb_40">Contact</h3>
                             <ul class="list-unstyled f_list">
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">System Status</a></li>
+                                <li><a href="{% url 'core:contact' %}">Support</a></li>
+                                <!-- <li><a href="#">System Status</a></li> -->
                             </ul>
                         </div>
                     </div>

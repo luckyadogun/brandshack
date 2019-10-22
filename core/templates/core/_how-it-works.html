@@ -86,11 +86,11 @@
                                     Samples
                                 </a>
                             </li>
-                            <!-- <li class="nav-item submenu mega_menu">
+                            <li class="nav-item submenu mega_menu">
                                 <a class="nav-link" href="{% url 'core:pricing' %}" role="button" aria-haspopup="true" aria-expanded="false">
                                     Pricing
                                 </a>
-                            </li> -->
+                            </li>
                             <li class="dropdown submenu nav-item"><a title="Pages" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">More</a>
                                 <ul role="menu" class=" dropdown-menu">
 
@@ -118,8 +118,8 @@
             <img class="breadcrumb_shap" src="{% static 'assets/img/breadcrumb/banner_bg.png' %}" alt="">
             <div class="container">
                 <div class="breadcrumb_content text-center">
-                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">How it works</h1>
-                    <p class="f_400 w_color f_size_16 l_height26">From your dashboard, you have total access to request ad designs for any social platform.<br>Your requests gets queued and sent to a designer assigned to your account during sign up!</p>
+                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Our process</h1>
+                    <p class="f_400 w_color f_size_16 l_height26">Why I say old chap that is spiffing off his nut arse pear shaped plastered<br> Jeffrey bodge barney some dodgy.!!</p>
                 </div>
             </div>
         </section>
@@ -128,6 +128,22 @@
             <div class="container">
                 <div class="features_info">
                     <img class="dot_img" src="{% static 'assets/img/process/divider.png' %}" alt="">
+                    <div class="row agency_featured_item mt-0 flex-row-reverse">
+                        <div class="col-md-6">
+                            <div class="agency_featured_img text-right">
+                                <img src="{% static 'assets/img/process/process_1.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="agency_featured_content pr_70 pl_70">
+                                <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
+                                <img class="number" src="{% static 'assets/img/home4/icon01.png' %}" alt="">
+                                <h3>Choose a payment plan</h3>
+                                <p>Why I say old chap that is spiffing bodge, blag pardon me buggered mufty Oxford butty bubble and squeak wind up, brown bread the full monty bloke ruddy cras tickety-boo squiffy. Starkers dropped a clanger lurgy is cack excuse my French what a plonker blower.!</p>
+                                <a href="#" class="icon mt_30"><i class="ti-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row agency_featured_item agency_featured_item_two">
                         <div class="col-md-6">
                             <div class="agency_featured_img text-right">
@@ -137,14 +153,10 @@
                         <div class="col-md-6">
                             <div class="agency_featured_content pl_100">
                                 <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
-                                <!-- <img class="number" src="{% static 'assets/img/home4/icon01.png' %}" alt=""> -->
+                                <img class="number" src="{% static 'assets/img/home4/icon02.png' %}" alt="">
                                 <h3>Request your designs from your dashboard</h3>
-                                <p>Your dashboard gives you absolute control! Imagine it as your magic genie. You make a request and your designs appear freshly-made. No hiring, no looking for high-converting images, no freelancers or employees to manage. Just you and high-converting ad designs! </p>
-                                {% if request.user.is_authenticated %}
-                                    <a href="{% url 'core:dashboard' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
-                                {% else %}
-                                    <a href="{% url 'core:index' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
-                                {% endif %}
+                                <p>Why I say old chap that is spiffing bodge, blag pardon me buggered mufty Oxford butty bubble and squeak wind up, brown bread the full monty bloke ruddy cras tickety-boo squiffy. Starkers dropped a clanger lurgy is cack excuse my French what a plonker blower.!</p>
+                                <a href="#" class="icon mt_30"><i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -157,14 +169,10 @@
                         <div class="col-md-6">
                             <div class="agency_featured_content pr_70 pl_70">
                                 <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
-                                <!-- <img class="number" src="{% static 'assets/img/home4/icon02.png' %}" alt=""> -->
+                                <img class="number" src="{% static 'assets/img/home4/icon3.png' %}" alt="">
                                 <h3>Review your designs</h3>
-                                <p>Wowza! Fast huh? Now that your design is here, you can get a chance to have a say in the design process. Proof-read the copy, CTA button, and check if the colors match your brand. <u><strong>But we don't recommend you ask for restructing. We got that covered to get you high-CTR!</strong></u></p>
-                                {% if request.user.is_authenticated %}
-                                    <a href="{% url 'core:dashboard' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
-                                {% else %}
-                                    <a href="{% url 'core:index' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
-                                {% endif %}
+                                <p>Why I say old chap that is spiffing bodge, blag pardon me buggered mufty Oxford butty bubble and squeak wind up, brown bread the full monty bloke ruddy cras tickety-boo squiffy. Starkers dropped a clanger lurgy is cack excuse my French what a plonker blower.!</p>
+                                <a href="#" class="icon mt_30"><i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -177,14 +185,26 @@
                         <div class="col-md-6">
                             <div class="agency_featured_content pl_100">
                                 <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
-                                <!-- <img class="number" src="{% static 'assets/img/process/icon3.png' %}" alt=""> -->
+                                <img class="number" src="{% static 'assets/img/process/icon_04.png' %}" alt="">
                                 <h3>Download the images</h3>
-                                <p>Time for harvest! Your ads are ready to work for you and get you the best results. Why wait? Unpack them from your dashboard or email account and upload them on your ad-buying platform. Download a CSV of the adset performance and we'd send you optimized copies to skyrocket your campaign!</p>
-                                {% if request.user.is_authenticated %}
-                                    <a href="{% url 'core:dashboard' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
-                                {% else %}
-                                    <a href="{% url 'core:index' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
-                                {% endif %}
+                                <p>Why I say old chap that is spiffing bodge, blag pardon me buggered mufty Oxford butty bubble and squeak wind up, brown bread the full monty bloke ruddy cras tickety-boo squiffy. Starkers dropped a clanger lurgy is cack excuse my French what a plonker blower.!</p>
+                                <a href="#" class="icon mt_30"><i class="ti-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row agency_featured_item flex-row-reverse">
+                        <div class="col-md-6">
+                            <div class="agency_featured_img text-right">
+                                <img src="{% static 'assets/img/process/process_5.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="agency_featured_content pr_70 pl_70">
+                                <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
+                                <img class="number" src="{% static 'assets/img/process/icon_05.png' %}" alt="">
+                                <h3>Request for optimized copies during churn</h3>
+                                <p>Why I say old chap that is spiffing bodge, blag pardon me buggered mufty Oxford butty bubble and squeak wind up, brown bread the full monty bloke ruddy cras tickety-boo squiffy. Starkers dropped a clanger lurgy is cack excuse my French what a plonker blower.!</p>
+                                <a href="#" class="btn_hover agency_banner_btn mt_30">Get in Touch</a>
                             </div>
                         </div>
                     </div>
