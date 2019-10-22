@@ -27,7 +27,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
@@ -86,7 +86,15 @@ WSGI_APPLICATION = 'brandshack.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
+try:
+    # production database on Heroku
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL')
+        )
+    }
+except:
+    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': config('DB_NAME'),
@@ -96,6 +104,7 @@ DATABASES = {
             'PORT': config('DB_PORT'),
         }
     }
+
 
 
 
@@ -142,3 +151,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+PROJECT_DIR = os.path.dirname(__file__)

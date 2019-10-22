@@ -1,0 +1,1 @@
+web: gunicorn brandshack.wsgi --log-file -
