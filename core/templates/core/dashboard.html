@@ -93,7 +93,7 @@
 
                                     <li class="nav-item"><a title="Team" class="nav-link" href="{% url 'core:team' %}">Team</a></li>
 
-                                    <li class="nav-item"><a title="FAQ" class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li>
+                                    <!-- <li class="nav-item"><a title="FAQ" class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li> -->
 
                                     <li class="nav-item"><a title="Contact" class="nav-link" href="{% url 'core:contact' %}">Contact</a></li>
                                 </ul>
@@ -114,8 +114,8 @@
         <section class="breadcrumb_area" style="background-image: url('{% static 'assets/img/Img-08.jpg' %}'); background-position:  center center; background-repeat: no-repeat; background-size: cover;">
             <div class="container">
                 <div class="breadcrumb_content text-center">
-                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Meet The Team</h1>
-                    <p class="f_400 w_color f_size_16 l_height26">Why I say old chap that is spiffing off his nut arse pear shaped plastered<br> Jeffrey bodge barney some dodgy.!!</p>
+                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Dashboard</h1>
+                    <!-- <p class="f_400 w_color f_size_16 l_height26">Why I say old chap that is spiffing off his nut arse pear shaped plastered<br> Jeffrey bodge barney some dodgy.!!</p> -->
                 </div>
             </div>
         </section>
@@ -125,8 +125,8 @@
                 <div class="row">
                     <div class="col-lg-3 pr-0">
                         <div class="contact_info_item">
-                            <h6 class="f_p f_size_20 t_color3 f_500 mb_20">Hi {{ request.user }}!</h6>
-                            <p class="f_400 f_size_15">Melbourne’s GPO 434 Bourke St. Dhaka VIC 3074, Australia</p>
+                            <h6 class="f_p f_size_20 t_color3 f_500 mb_20">Welcome, {{ request.user }}!</h6>
+                            <p class="f_400 f_size_15">Use the form to requests for designs for any or all platforms.</p>
                         </div>
                     </div>
                     <div class="col-lg-8 offset-lg-1">
