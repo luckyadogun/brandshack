@@ -24,7 +24,7 @@ def _email_activate_acct(request, user_pk=None):
         'uid': urlsafe_base64_encode(force_bytes(user.pk)),
         'token': account_activation_token.make_token(user),
     })
-    send_email(recipient=user.email, subject=mail_subject, html_content=message, from_email='helpdesk@brandshack.co')
+    send_email(recipient=user.email, subject=mail_subject, html_content=message, from_email='BrandShack@brandshack.co')
 
 
 def _email_design_request(platform=None, brief=None, customer=None):
