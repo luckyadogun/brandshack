@@ -74,3 +74,17 @@ current_plan: free, mono, duo, trio
     else:
         1. Lands on dashboard
         2. Every request reduces plan by 1
+
+
+------------------------------------------
+v0.2:
+
+Add design description on dashboard form
+Add client email on design request
+Think of a system that routes to designers from anywhere:
+    - You register as a designer
+    - You have your own dashboard
+    - You have your own clients (no client splitting)
+    - We pay you $10/design
+    - You only get a task if you are online and are open
+My name doesn't add up: Lucky on LinkedIn, Larry on site
