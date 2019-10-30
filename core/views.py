@@ -105,6 +105,14 @@ def login_user(request):
             return redirect('/login/')
     return render(request, 'core/login.html', {})
 
+def successful_trans(request):
+    "view function to handle notify user of successful payment"
+    return render(request, 'core/thank_you.html', {})
+
+def failed_trans(request):
+    "view function to handle notify user of failed payment"
+    return render(request, 'core/oops.html', {})
+
 @login_required
 def dashboard(request):
     customer = get_object_or_404(Customer, user=request.user.id)
