@@ -96,6 +96,7 @@ DATABASES = {
         default=config('DATABASE_URL')
     )
 }
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -108,7 +109,6 @@ DATABASES = {
 # }
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 
 
 # Password validation
