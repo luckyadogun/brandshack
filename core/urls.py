@@ -6,7 +6,7 @@ from core import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('campaign-gads-1/', views.first_gads, name='campaign-gads-1'),
+    # path('campaign-gads-1/', views.first_gads, name='campaign-gads-1'),
     path('how-it-works/', views.how_it_works, name='how-it-works'),
     path('samples/', views.samples, name='samples'),
     path('pricing/', views.pricing, name='pricing'),
