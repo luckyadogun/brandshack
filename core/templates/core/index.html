@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
-    <title>BrandShack - High performance social media banner ad designs </title>
+    <title>BrandShack - All the ads you need to hit your first online marketing goal </title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-selector/css/bootstrap-select.min.css' %}">
@@ -127,8 +127,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <h2 class="f_p f_size_40 l_height60 wow fadeInUp" data-wow-delay="0.3s">What would an <span class="f_700">extra 1.5% CTR</span><br> do for your <u>social</u> ad campaign?</h2>
-                            <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">Create and optimize revenue-boosting social media banner ad design that convert!<br> Get started for just $1. It's that simple.</p>
+                            <h2 class="f_p f_size_40 l_height60 wow fadeInUp" data-wow-delay="0.3s">All the ads you need to hit<br> <i>your first </i><span class="f_700">online marketing goal</span></h2>
+                            <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">Bring your solopreneur dreams to reality. We design the ads, you get the sales or subscribers. <br>No monthly fee. No Committments. Get started for just $1. It's that simple.</p>
                             <form class="wow fadeInUp" data-wow-delay="0.6s" method="post" action=".">                                
                                 {% csrf_token %}
                                 <div class="input-group subcribes">
@@ -145,7 +145,7 @@
                 </div>
             </div>
         </section>
-        <section class="support_partner_logo_area">
+        <!-- <section class="support_partner_logo_area">
             <div class="container">
                 <h4 class="f_size_18 f_400 f_p text-center l_height28 mb_50">Companies that use BrandShack to boost their ad results</h4>
                 <div class="row partner_info">
@@ -167,14 +167,14 @@
                 </div>
                 <div class="border_bottom"></div>
             </div>
-        </section>
+        </section> -->
         <section class="support_help_area sec_pad">
             <div class="container">
                 <h2 class="f_p f_size_30 l_height50 f_600 t_color text-center wow fadeInUp mb_60">What would you like to do right now?</h2>
                 <div class="d-flex">
                     <div class="support_item">
-                        <img src="{% static 'assets/img/new-home/ticket-support.png' %}" alt="">
-                        <h4>Create "CTR-Boost"&trade; Banner</h4>
+                        <img src="{% static 'assets/img/new-home/email.png' %}" alt="">
+                        <h4>Get your first "$$$ Sales"</h4>
                         {% if request.user.is_authenticated %}
                             <a href="{% url 'core:dashboard' %}" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
                         {% else %}
@@ -182,8 +182,8 @@
                         {% endif %}
                     </div>
                     <div class="support_item">
-                        <img src="{% static 'assets/img/new-home/email.png' %}" alt="">
-                        <h4>Refuel "CTR-Boost"&trade; Banner</h4>
+                        <img src="{% static 'assets/img/new-home/ticket-support.png' %}" alt="">
+                        <h4>Get your first "% Subscribers"</h4>
                         {% if request.user.is_authenticated %}
                             <a href="{% url 'core:dashboard' %}" class="software_banner_btn btn_submit f_size_15 f_500">Get Started</a>
                         {% else %}
@@ -197,7 +197,7 @@
             <div class="container">
                 <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
                     <h2 class="f_p f_size_30 l_height50 f_600 t_color3">What you'll get</h2>
-                    <p class="f_400 f_size_16 mb-0">We've mastered the art of designing social media marketing ads that work.<br>Let's get your campaign started profitably!</p>
+                    <p class="f_400 f_size_16 mb-0">We understand how hard and lonely it is to create your first product - SaaS or Infoproduct - <br>so we put together a team to help you reach your first marketing goal, faster!</p>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 d-flex align-items-center">
@@ -205,19 +205,19 @@
                             <li class="nav-item wow fadeInUp" data-wow-delay="0.4s">
                                 <a class="nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="one" aria-selected="true">
                                     <h5>Facebook Ads</h5>
-                                    <p>Optimize your Facebook banner for higher CTR</p>
+                                    <p>You'll get eye-popping Facebook ads that'll get you higher CTR</p>
                                 </a>
                             </li>
                             <li class="nav-item wow fadeInUp" data-wow-delay="0.6s">
                                 <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="two" aria-selected="false">
                                     <h5>Instagram Ads</h5>
-                                    <p>Create high-engagement Instagram ads</p>
+                                    <p>You'll high engagement-rate Instagram ads for your campaign</p>
                                 </a>
                             </li>
                             <li class="nav-item wow fadeInUp" data-wow-delay="0.8s">
                                 <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="three" aria-selected="false">
                                     <h5>Twitter Ads</h5>
-                                    <p>Get Twitter ad designs that gains traction</p>
+                                    <p>You'll also get Twitter ads that'll move your traction needle</p>
                                 </a>
                             </li>
                         </ul>
@@ -244,49 +244,49 @@
                 </div>
             </div>
         </section>
-        <!-- <section class="support_integration_area">
+        <section class="support_integration_area">
             <div class="container">
                 <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
-                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Why Us</h2>
-                    <p class="f_400 f_size_16 mb-0">We offer the best pricing</p>
+                    <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Who needs BrandShack</h2>
+                    <p class="f_400 f_size_16 mb-0">We are a design marketing service by entrepreneurs for entrepreneurs. We've been there and done that.<br> We are happy to help you achieve the most important marketing goal for your NEW product including...</p>
                 </div>
                 <div class="row flex-row-reverse">
                     <div class="col-lg-9 col-md-10 col-sm-12">
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="#" class="s_integration_item">
+                                <a href="" class="s_integration_item">
                                     <img src="{% static 'assets/img/new-home/kissmetrics.png' %}" alt="">
-                                    <h5>Cost-saving</h5>
+                                    <h5>E-Books</h5>
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="#" class="s_integration_item">
+                                <a href="" class="s_integration_item">
                                     <img src="{% static 'assets/img/new-home/metorik.png' %}" alt="">
-                                    <h5>Cancel anytime</h5>
+                                    <h5>Online Courses</h5>
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="#" class="s_integration_item">
+                                <a href="" class="s_integration_item">
                                     <img src="{% static 'assets/img/new-home/nicereply-1.png' %}" alt="">
-                                    <h5>Flexible Payment</h5>
+                                    <h5>SaaS Applications</h5>
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="#" class="s_integration_item">
+                                <a href="" class="s_integration_item">
                                     <img src="{% static 'assets/img/new-home/campfire.png' %}" alt="">
-                                    <h5>Free ad-Hub</h5>
+                                    <h5>Mobile Applications</h5>
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="#" class="s_integration_item">
+                                <a href="" class="s_integration_item">
                                     <img src="{% static 'assets/img/new-home/webhooks.png' %}" alt="">
-                                    <h5>24-Hour Support</h5>
+                                    <h5>Supplements</h5>
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="#" class="s_integration_item">
+                                <a href="" class="s_integration_item">
                                     <img src="{% static 'assets/img/new-home/briteverify.png' %}" alt="">
-                                    <h5>BriteVerify</h5>
+                                    <h5>Services</h5>
                                 </a>
                             </div>
                         </div>
@@ -295,13 +295,13 @@
                         <img class="integration_img" src="{% static 'assets/img/new-home/tree.png' %}" alt="">
                     </div>
                 </div>
-            </div> -->
+            </div>
         </section>
         <section class="support_price_area sec_pad">
             <div class="container custom_container p0">
                 <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
                     <h2 class="f_p f_size_30 l_height50 f_600 t_color3">Pricing</h2>
-                    <p class="f_400 f_size_16 mb-0">We offer revenue-pumping ad designs with flexible pricing</p>
+                    <p class="f_400 f_size_16 mb-0">Our goal is to get your through the door. No monthly subscriptions fees, whatsoever!</p>
                 </div>
                 <div class="price_content price_content_two">
                     <div class="row">
@@ -309,13 +309,13 @@
                         <div class="price_item">
                             <img src="{% static 'assets/img/new-home/p-1.png' %}" alt="">
                             <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Trial</h5>
-                            <p>Get 3X1 high-impact ads for Facebook, Instagram, and Twitter now</p>
+                            <p>Test-run BrandShack to hit a small online goal</p>
                             <div class="price f_700 f_size_40 t_color2">$1.00</div>
                             <ul class="list-unstyled p_list">
                                 <li><i class="ti-check"></i>1 Facebook ad</li>
                                 <li><i class="ti-check"></i>1 Instagram ad</li>
                                 <li><i class="ti-check"></i>1 Twitter ad</li>
-                                <li><i class="ti-close"></i>No Support</li>
+                                <li><i class="ti-close"></i>Ad Copywriting</li>
                                 <li><i class="ti-close"></i>No Revision</li>
                             </ul>
                             <a href="https://rave.flutterwave.com/pay/bshk-trial" class="price_btn btn_hover">Get Started</a>
@@ -323,16 +323,16 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <div class="price_item">
-                            <div class="tag"><span>Recommended</span></div>
+                            <!-- <div class="tag"><span>Recommended</span></div> -->
                             <img src="{% static 'assets/img/new-home/p-2.png' %}" alt="">
-                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Beta</h5>
-                            <p>Get 10X3 high-impact ads for Facebook, Instagram, and Twitter every month</p>
-                            <div class="price f_700 f_size_40 t_color2">$299.00<sub class="f_size_16 f_400">/ mo</sub></div>
+                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Sales</h5>
+                            <p>Idea for infopreneurs, authors, course instructors trying to hit their first set online goal</p>
+                            <div class="price f_700 f_size_40 t_color2">$299.00</div>
                             <ul class="list-unstyled p_list">
                                 <li><i class="ti-check"></i>10 Facebook ads</li>
                                 <li><i class="ti-check"></i>10 Instagram ads</li>
                                 <li><i class="ti-check"></i>10 Twitter ads</li>
-                                <li><i class="ti-check"></i>Dedicated Support</li>
+                                <li><i class="ti-check"></i>Ad Copywriting</li>
                                 <li><i class="ti-check"></i>10 Revisions</li>
                             </ul>
                             <a href="https://rave.flutterwave.com/pay/bshk-beta" class="price_btn btn_hover">Get Started</a>
@@ -341,14 +341,14 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="price_item">
                             <img src="{% static 'assets/img/new-home/p-3.png' %}" alt="">
-                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Alpha</h5>
-                            <p>Get UNLIMITED high-impact ads for Facebook, Instagram, and Twitter every month</p>
-                            <div class="price f_700 f_size_40 t_color2">$599.00<sub class="f_size_16 f_400">/ mo</sub></div>
+                            <h5 class="f_p f_size_20 f_600 t_color2 mt_30">Subscribers</h5>
+                            <p>Ideal for software and SaaS entrepreneurs who are aiming to get their first thousand subscribers</p>
+                            <div class="price f_700 f_size_40 t_color2">$399.00</div>
                             <ul class="list-unstyled p_list">
-                                <li><i class="ti-check"></i>10 Facebook ads</li>
-                                <li><i class="ti-check"></i>10 Instagram ads</li>
-                                <li><i class="ti-check"></i>10 Twitter ads</li>
-                                <li><i class="ti-check"></i>Dedicated Support</li>
+                                <li><i class="ti-check"></i>15 Facebook ads</li>
+                                <li><i class="ti-check"></i>15 Instagram ads</li>
+                                <li><i class="ti-check"></i>15 Twitter ads</li>
+                                <li><i class="ti-check"></i>Ad Copywriting</li>
                                 <li><i class="ti-check"></i>30 Revisions</li>
                             </ul>
                             <a href="https://rave.flutterwave.com/pay/bshk-alpha" class="price_btn btn_hover">Get Started</a>

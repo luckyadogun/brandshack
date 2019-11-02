@@ -19,7 +19,7 @@
                     <div class="col-lg-3 pr-0">
                         <div class="contact_info_item">
                             <h6 class="f_p f_size_20 t_color3 f_500 mb_20">Welcome, {{ request.user }}!</h6>
-                            <p class="f_400 f_size_15">Use the form to requests for designs for any or all platforms.</p>
+                            <p class="f_400 f_size_15">Use the form to introduce your project and requests for designs.</p>
                         </div>
                     </div>
                     <div class="col-lg-8 offset-lg-1">
@@ -41,12 +41,17 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group text_box">
-                                            <input type="text" id="subject" name="platform" placeholder="Platform: Facebook, Instagram, Twitter">
+                                            <input type="text" id="subject" name="purpose" placeholder="Purpose: Sales or Subscribers?">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group text_box">
                                             <textarea id="message" name="brief" placeholder="Project Description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group text_box">
+                                            <input type="url" name="url" placeholder="Project website or URL">
                                         </div>
                                     </div>
                                 </div>

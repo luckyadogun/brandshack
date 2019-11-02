@@ -41,7 +41,7 @@
                 content: "";
                 width: 0;
                 height: 1px;
-                background: #6754e2;
+                background: #1a77ff;
                 position: absolute;
                 bottom: 0;
                 left: auto;
@@ -501,7 +501,7 @@
                 width: 16px;
                 height: 16px;
                 border-radius: 50%;
-                background: #6754e2;
+                background: #1a77ff;
                 color: #fff;
                 font-size: 11px;
                 display: block;
@@ -572,7 +572,7 @@
                             font-size: 14px;
                             color: #333;
                             &:hover{
-                                color:#6754e2;
+                                color:#1a77ff;
                             }
                         }
                     }
@@ -582,7 +582,7 @@
                         }
                         .cart-title{
                             a{
-                                color:#6754e2;
+                                color:#1a77ff;
                             }
                         }
                     }
@@ -608,20 +608,20 @@
                             margin: 0px;
                             line-height: 40px;
                             padding: 0px 32px;
-                            background: #6754e2;
-                            border: 1px solid #6754e2;
+                            background: #1a77ff;
+                            border: 1px solid #1a77ff;
                             color: #fff;
                             transition: all 0.3s linear;
                             &:hover{
                                 background: transparent;
-                                color: #6754e2;
+                                color: #1a77ff;
                             }
                             & + .get_btn{
                                 margin-left: 10px;
                                 background: transparent;
-                                color: #6754e2;
+                                color: #1a77ff;
                                 &:hover{
-                                    background: #6754e2;
+                                    background: #1a77ff;
                                     color: #fff;
                                 }
                             }
@@ -1394,7 +1394,7 @@
                 border: 2px solid #ccc5fa;
                 box-shadow: none;
                 &:hover{
-                    border-color: #6754e2;
+                    border-color: #1a77ff;
                 }
             }
             .btn_get_radious{
@@ -1408,7 +1408,7 @@
             .menu_toggle{
                 .hamburger,.hamburger-cross{
                     span{
-                        background:#6754e2; 
+                        background:#1a77ff; 
                     }
                 }
             } 

@@ -44,7 +44,7 @@
                         content: "";
                         width: 0;
                         height: 1px;
-                        background: #6754e2;
+                        background: #1a77ff;
                         right: 0;
                         left: auto;
                         bottom: 0;
@@ -117,7 +117,7 @@
                 color: #7f88a6;
                 transition: color 0.2s linear;
                 &:hover{
-                    color: #6754e2; 
+                    color: #1a77ff; 
                 }
             }
             & + li{
@@ -136,7 +136,7 @@
     }
     a{
         &:hover{
-            color: #6754e2; 
+            color: #1a77ff; 
         }
     }
 }
@@ -617,7 +617,7 @@
             .f_social_icon_two{
                 a{
                     &:hover{
-                        color: #6754e2;
+                        color: #1a77ff;
                     }
                 }
             }
@@ -625,17 +625,17 @@
         .widget-wrap p{
             a{
                 &:hover{
-                    color: #6754e2;
+                    color: #1a77ff;
                 }
             }
         } 
         &.about-widget .f_list li{
             a{
                 &:before{
-                    background:#6754e2; 
+                    background:#1a77ff; 
                 }
                 &:hover{
-                    color: #6754e2;
+                    color: #1a77ff;
                 }
             }
         } 
@@ -644,19 +644,19 @@
         a{
             transition: color 0.2s linear;
             &:hover{
-                color: #6754e2;
+                color: #1a77ff;
             }
         }
         p{
             a{
-                color: #6754e2;
+                color: #1a77ff;
             }
         }
         .f_menu{
             li{
                 a{
                     &:hover{
-                        color: #6754e2;
+                        color: #1a77ff;
                     }
                 }
             }

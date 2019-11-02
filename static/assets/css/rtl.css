@@ -348,7 +348,7 @@ p.mb-0.f_400 {
     margin-right: 7px;
 }
 .sign_info .sign_info_content ul li i {
-    color: #5e2ced;
+    color: #1a77ff;
     margin-right: 0;
     float: right;
     margin-left: 10px;
@@ -587,7 +587,7 @@ padding-left: 10px;
 
 .blog_single .blockquote {
     border-left: none;
-    border-right: 4px solid #5e2ced;
+    border-right: 4px solid #1a77ff;
     padding-left: 0;
     padding-right: 35px;
 }
@@ -1119,7 +1119,7 @@ padding-left: 10px;
     padding-left: 0;
 }
 .s_subcribes .form-control {
-    border-right: 10px solid #6754e2;
+    border-right: 10px solid #1a77ff;
     padding-right: 50px;
     border-left: none;
 }
@@ -1135,11 +1135,11 @@ ul.list-unstyled.mt_30 {
     text-align: center;
 }
 .menu_four .btn_get.Cus_rt {
-    color:#6754e2;
+    color:#1a77ff;
     background: #fff;
 }
 .menu_four .btn_get.Cus_rt:hover {
-    background: #6754e2;
+    background: #1a77ff;
     border-color: transparent;
     color: #fff;
 }
@@ -1148,7 +1148,7 @@ ul.list-unstyled.mt_30 {
 }
 .menu_toggle .hamburger-cross span {
     display: block;
-    background: #5e2ced;
+    background: #1a77ff;
     border-radius: 3px;
     -webkit-transition: .2s ease-in-out;
     -o-transition: .2s ease-in-out;
@@ -1166,7 +1166,7 @@ ul.list-unstyled.mt_30 {
     width: 540px;
     height: 540px;
     border-radius: 50%;
-    background: #5e2ced;
+    background: #1a77ff;
     left: -126px;
     right: 126px;
     z-index: -1;
@@ -1568,7 +1568,7 @@ ul.list-unstyled.mt_30 {
         padding: 15px 0px;
     }
     .menu_four .menu > .nav-item:hover .nav-link:before, .menu_four .menu > .nav-item.active .nav-link:before {
-        background: #6754e2;
+        background: #1a77ff;
     }
 
     .saas_features_item.text-center p.mb-0.f_400 {
@@ -1786,7 +1786,7 @@ ul.list-unstyled.mt_30 {
         width: 540px;
         height: 540px;
         border-radius: 50%;
-        background: #5e2ced;
+        background: #1a77ff;
         left: 0;
         right: 0;
         z-index: -1;
@@ -2020,7 +2020,7 @@ ul.list-unstyled.mt_30 {
         width: 450px;
         height: 380px;
         border-radius: 50%;
-        background: #5e2ced;
+        background: #1a77ff;
         left: 0;
         right: auto;
         z-index: -1;
@@ -2070,7 +2070,7 @@ ul.list-unstyled.mt_30 {
         width: 400px;
         height: 380px;
         border-radius: 50%;
-        background: #5e2ced;
+        background: #1a77ff;
         left: 0;
         right: auto;
         z-index: -1;
@@ -2105,7 +2105,7 @@ ul.list-unstyled.mt_30 {
         width: 323px;
         height: 392px;
         border-radius: 50%;
-        background: #5e2ced;
+        background: #1a77ff;
         left: 0;
         right: auto;
         z-index: -1;
@@ -2173,7 +2173,7 @@ ul.list-unstyled.mt_30 {
         width: 320px;
         height: 320px;
         border-radius: 50%;
-        background: #5e2ced;
+        background: #1a77ff;
         left: 0;
         right: auto;
         z-index: -1;

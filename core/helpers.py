@@ -27,13 +27,14 @@ def _email_activate_acct(request, user_pk=None):
     send_email(recipient=user.email, subject=mail_subject, html_content=message, from_email='BrandShack@brandshack.co')
 
 
-def _email_design_request(platform=None, brief=None, customer=None):
+def _email_design_request(customer=None, purpose=None, brief=None, url=None):
     "an email message for design requests from clients"
     mail_subject = 'Client design request'
     message = render_to_string('core/email/design_request.html', {
         'customer': customer,
-        'platform': platform,
-        'brief': brief
+        'platform': purpose,
+        'brief': brief,
+        'URL': url,
     })
     send_email(recipient='design@brandshack.co', subject=mail_subject, html_content=message, from_email='design@brandshack.co')
 

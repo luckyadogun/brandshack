@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="breadcrumb_content text-center">
                     <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">How it works</h1>
-                    <p class="f_400 w_color f_size_16 l_height26">From your dashboard, you have total access to request ad designs for any social platform.<br>Your requests gets queued and sent to a designer assigned to your account during sign up!</p>
+                    <p class="f_400 w_color f_size_16 l_height26">Use our smart-system to push your orders from the dashboard. Tell us about your project and we will swoop into action</p>
                 </div>
             </div>
         </section>
@@ -21,19 +21,19 @@
                     <div class="row agency_featured_item agency_featured_item_two">
                         <div class="col-md-6">
                             <div class="agency_featured_img text-right">
-                                <img src="{% static 'assets/img/process/process_2.png' %}" alt="">
+                                <img src="{% static 'assets/img/process/process_1.png' %}" alt="">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="agency_featured_content pl_100">
                                 <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
                                 <!-- <img class="number" src="{% static 'assets/img/home4/icon01.png' %}" alt=""> -->
-                                <h3>Request your designs from your dashboard</h3>
-                                <p>Your dashboard gives you absolute control! Imagine it as your magic genie. You make a request and your designs appear freshly-made. No hiring, no looking for high-converting images, no freelancers or employees to manage. Just you and high-converting ad designs! </p>
+                                <h3>Choose a plan that fits with your goal</h3>
+                                <p>What are you trying to achieve, sales or subscribers? Choose the right plan that fits your needs, register for an account and instantly get access to your personal dashboard.</p>
                                 {% if request.user.is_authenticated %}
                                     <a href="{% url 'core:dashboard' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
                                 {% else %}
-                                    <a href="{% url 'core:index' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
+                                    <a href="{% url 'core:pricing' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
                                 {% endif %}
                             </div>
                         </div>
@@ -48,12 +48,12 @@
                             <div class="agency_featured_content pr_70 pl_70">
                                 <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
                                 <!-- <img class="number" src="{% static 'assets/img/home4/icon02.png' %}" alt=""> -->
-                                <h3>Review your designs</h3>
-                                <p>Wowza! Fast huh? Now that your design is here, you can get a chance to have a say in the design process. Proof-read the copy, CTA button, and check if the colors match your brand. <u><strong>But we don't recommend you ask for restructing. We got that covered to get you high-CTR!</strong></u></p>
+                                <h3>Tell us about your project</h3>
+                                <p>From your dashboard, share your product's URL, description and first marketing goal with us. Tell us about target audience, their demographics, problems your product/service solves.</p>
                                 {% if request.user.is_authenticated %}
                                     <a href="{% url 'core:dashboard' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
                                 {% else %}
-                                    <a href="{% url 'core:index' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
+                                    <a href="{% url 'core:pricing' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
                                 {% endif %}
                             </div>
                         </div>
@@ -68,12 +68,12 @@
                             <div class="agency_featured_content pl_100">
                                 <div class="dot"><span class="dot1"></span><span class="dot2"></span></div>
                                 <!-- <img class="number" src="{% static 'assets/img/process/icon3.png' %}" alt=""> -->
-                                <h3>Download the images</h3>
-                                <p>Time for harvest! Your ads are ready to work for you and get you the best results. Why wait? Unpack them from your dashboard or email account and upload them on your ad-buying platform. Download a CSV of the adset performance and we'd send you optimized copies to skyrocket your campaign!</p>
+                                <h3>Get a weekly supply of the ads you need</h3>
+                                <p>Time to the best out of your marketing. You've done the hard part! We'll take over the creation of your ads and supply you a weekly dose of ads for your campaign. And yes! You can ask for tweaks and changes at no extra cost!</p>
                                 {% if request.user.is_authenticated %}
                                     <a href="{% url 'core:dashboard' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
                                 {% else %}
-                                    <a href="{% url 'core:index' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
+                                    <a href="{% url 'core:pricing' %}" class="icon mt_30"><i class="ti-arrow-right"></i></a>
                                 {% endif %}
                             </div>
                         </div>

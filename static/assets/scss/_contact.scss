@@ -35,9 +35,9 @@
             position: absolute;
             left: 0;
             font-size: 30px;
-            color: #5e2ced;
-            background-image: -moz-linear-gradient(0deg, #5e2ced 0%, #a485fd 100%);
-            background-image: -webkit-linear-gradient(0deg, #5e2ced 0%, #a485fd 100%);
+            color: #1a77ff;
+            background-image: -moz-linear-gradient(0deg, #1a77ff 0%, #a485fd 100%);
+            background-image: -webkit-linear-gradient(0deg, #1a77ff 0%, #a485fd 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             top: 0px;
@@ -76,7 +76,7 @@
         padding-left: 3px;
         display: inline-block;
         &:hover{
-            color: #5e2ced;
+            color: #1a77ff;
         }
     }
     & + .contact_info_item{
@@ -122,12 +122,12 @@
     .btn_three{
         min-width: 180px;
         text-align: center;
-        background: #5e2ced;
-        border-color: #5e2ced;
+        background: #1a77ff;
+        border-color: #1a77ff;
         margin-top: 0px;
         &:hover{
             background: transparent;
-            color: #5e2ced;
+            color: #1a77ff;
         }
     }
 }
@@ -228,7 +228,7 @@
     }
     .btn_three{
         width: 100%;
-        background: #5e2ced;
+        background: #1a77ff;
         color: #fff;
         margin-top: 40px;
         &:hover{
@@ -239,7 +239,7 @@
         font: 400 15px/26px $pop;
         color: #9ca3b9;
         a{
-            color: #5e2ced;
+            color: #1a77ff;
             display: inline-block;
             margin-left: 6px;
         }
@@ -274,7 +274,7 @@
                 font: 400 16px/34px $pop;
                 color: #677294;
                 i{
-                    color: #5e2ced;
+                    color: #1a77ff;
                     margin-right: 10px;
                 }
             }
@@ -328,7 +328,7 @@
             color: #161341;
             font-weight: 400;
             &:hover{
-                color: #5e2ced;
+                color: #1a77ff;
             }
         }
     }
@@ -336,10 +336,10 @@
 .sign_btn_transparent{
     display: inline-block;
     background: transparent;
-    border-color: #5e2ced;
-    color: #5e2ced;
+    border-color: #1a77ff;
+    color: #1a77ff;
     &:hover{
-        background: #5e2ced;
+        background: #1a77ff;
         color: #fff;
     }
 }
@@ -453,15 +453,15 @@
             font: 400 12px/40px $pop;
             color: #7f88a6;
             a{
-                color: #6754e2;
+                color: #1a77ff;
             }
         }
     }
 } 
 .saasland_col_screen{
-    background-image: -moz-linear-gradient( -120deg, rgb(94,44,237) 0%, rgb(164,133,253) 100%);
-    background-image: -webkit-linear-gradient( -120deg, rgb(94,44,237) 0%, rgb(164,133,253) 100%);
-    background-image: -ms-linear-gradient( -120deg, rgb(94,44,237) 0%, rgb(164,133,253) 100%);
+    background-image: -moz-linear-gradient( -120deg, rgb(26, 119, 255) 0%, rgb(26, 119, 255) 100%);
+    background-image: -webkit-linear-gradient( -120deg, rgb(26, 119, 255) 0%, rgb(26, 119, 255) 100%);
+    background-image: -ms-linear-gradient( -120deg, rgb(26, 119, 255) 0%, rgb(26, 119, 255) 100%);
     width: 60%;
     position: relative;
     z-index: 1;
@@ -520,7 +520,7 @@
                     padding: 0px 5px;
                     transition: color 0.4s linear;
                     &:hover{
-                        color: #6754e2;
+                        color: #1a77ff;
                     }
                 }
             }

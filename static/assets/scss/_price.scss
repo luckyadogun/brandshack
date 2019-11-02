@@ -64,7 +64,7 @@
             color: #7fcb11;
         }
         &.p_icon2{
-            color: #6754e2;
+            color: #1a77ff;
         }
         &.p_icon3{
             color: #e92460;
@@ -159,7 +159,7 @@
     .btn-submit{
         position: absolute;
         background: transparent;
-        color: #6754e2;
+        color: #1a77ff;
         right: 40px;
         line-height: 100px;
         padding: 0px;
@@ -457,7 +457,7 @@
                 transition: color 0.5s ease 0s;
             }
             &.active{
-                background-color: #7444fd;
+                background-color: #1a77ff;
                 h5,p{
                     color: #fff;
                 }

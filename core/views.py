@@ -130,11 +130,12 @@ def failed_trans(request):
 @login_required
 def dashboard(request):
     customer = get_object_or_404(Customer, user=request.user.id)
-    platform = request.POST.get('platform')
+    purpose = request.POST.get('purpose')
     brief = request.POST.get('brief')
-    if platform and brief:
+    url = request.POST.get('url')
+    if purpose and brief:
         try:
-            _email_design_request(customer=customer, platform=platform, brief=brief)
+            _email_design_request(customer=customer, purpose=purpose, brief=brief, url=url)
             messages.success(request, "Your request has been sent!")
         except:
             messages.error(request, "There was an error sending your request. Try again!")
