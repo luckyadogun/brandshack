@@ -34,19 +34,19 @@ def index(request):
         trial_form = TrialForm()
     return render(request, 'core/index.html', {'trial_form': trial_form})
 
-def first_gads(request):
-    if request.method == 'POST':
-        trial_form = TrialForm(request.POST)
-        if trial_form.is_valid():
-            email = trial_form.cleaned_data['email']
-            try:
-                AbandonedSignup.objects.create(email=email)
-            except:
-                pass
-            return signup(request, email=email)
-    else:
-        trial_form = TrialForm()
-    return render(request, 'core/first_gads.html', {'trial_form': trial_form})
+# def first_gads(request):
+#     if request.method == 'POST':
+#         trial_form = TrialForm(request.POST)
+#         if trial_form.is_valid():
+#             email = trial_form.cleaned_data['email']
+#             try:
+#                 AbandonedSignup.objects.create(email=email)
+#             except:
+#                 pass
+#             return signup(request, email=email)
+#     else:
+#         trial_form = TrialForm()
+#     return render(request, 'core/first_gads.html', {'trial_form': trial_form})
 
 
 def signup(request, email=None):
