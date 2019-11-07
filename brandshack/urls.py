@@ -21,6 +21,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include(('core.urls', 'core'), namespace='core')),
-    path('pen-name-generator/', include(('penai.urls', 'penai'), namespace='penai')),
     path('admin/', admin.site.urls),
 ]
